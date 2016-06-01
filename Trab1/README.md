@@ -7,10 +7,10 @@
 
 ### 2. REQUISITOS DO PROJETO
 #### 2.1 Requisitos de Dados
-Descrição textual dos conjuntos de dados que serão utilizados no projeto
+> Descrição textual dos conjuntos de dados que serão utilizados no projeto
 
 #### 2.2 Requisitos Funcionais
-Descrição textual do conjunto de funções previstas no projeto - dados utilizados/produzidos, comportamento
+> Descrição textual do conjunto de funções previstas no projeto - dados utilizados/produzidos, comportamento
 
 
 ### 3. MODELAGEM CONCEITUAL
@@ -18,10 +18,10 @@ Descrição textual do conjunto de funções previstas no projeto - dados utiliz
 > Entidades, relacionamentos, entidades fracas, agregados, especializações/generalizações, atributos determinantes das entidades, atributos multivalorados)
 
 #### 3.2 Atributos de Entidades e Relacionamentos
-> Entidades em ordem alfabética; relacionamentos em ordem alfabética; nome dos atributos por objeto, indicativo de atributo determinante, indicativo de nulo/não nulo)
+> Entidades em ordem alfabética; relacionamentos em ordem alfabética; nome dos atributos por objeto, indicativo de atributo determinante, indicativo de nulo/não nulo
 
 #### 3.3 Regras de Negócio
->Restrições de integridade semântica; descrever pelo menos duas
+> Restrições de integridade semântica; descrever pelo menos duas
 
 
 ### 4. MODELAGEM LÓGICA RELACIONAL
@@ -29,13 +29,13 @@ Descrição textual do conjunto de funções previstas no projeto - dados utiliz
 > Descrição textual
 
 #### 4.2 Diagrama Relacional
-Tabelas, chaves primárias, chaves estrangeiras
+> Tabelas, chaves primárias, chaves estrangeiras
 
 #### 4.3 Atributos das Tabelas
-Tabelas em ordem alfabética; nome dos atributos por tabela, indicativo de PK, indicativo de FK, indicativo de nulo/não nulo
+> Tabelas em ordem alfabética; nome dos atributos por tabela, indicativo de PK, indicativo de FK, indicativo de nulo/não nulo
 
 #### 4.4 Restrições de Integridade Referencial
-Tabelas em ordem alfabética; relação de chaves estrangeiras, com respectivas chaves primárias referenciadas
+> Tabelas em ordem alfabética; relação de chaves estrangeiras, com respectivas chaves primárias referenciadas
 
 ### 5. DICIONÁRIOS DE ATRIBUTOS
 > Em ordem alfabética por nome: nome, tipo-base, domínio, máscara de apresentação; domínios podem ser descritos em separado 
