@@ -1,5 +1,5 @@
-# DB1-Trab2
-Trabalho 2 de Banco de Dados 1 - PUC-Rio
+# Banco de Dados 1 - PUC-Rio
+> Trabalho parte 2
 
 ### 7. MODELAGEM FÍSICA 
 #### 7.1 Tabelas 
@@ -9,7 +9,7 @@ Trabalho 2 de Banco de Dados 1 - PUC-Rio
 > Definição e criação de índices secundários úteis, utilizados nas consultas 
 
 #### 7.3 Gatilhos e Funções 
-> Pelo menos duas funções acionadas por meio de gatilhos) 
+> Pelo menos duas funções acionadas por meio de gatilhos
 
 ### 8. CARGA E VERIFICAÇÃO 
 #### 8.1 Carga de Dados 
