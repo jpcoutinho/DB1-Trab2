@@ -22,6 +22,9 @@ COMMENT ON {COLUMN TB_Pessoa.nome} IS 'Nome da pessoa com no max 40 caracteres';
 COMMENT ON {COLUMN TB_Pessoa.tipoDoc} IS 'Tipo do documento da pessoa Eg:. 02';
 COMMENT ON {COLUMN TB_Pessoa.sexo} IS 'Sexo da pessoa Eg:. M, F, O';
 COMMENT ON {COLUMN TB_Pessoa.nascimento} IS 'Data de nascimento da pessoa AAAAMMDD';
+ALTER TABLE TB_Pessoa
+	ADD CONSTRAINT VerificaNascimentoNaoFuturo
+		CHECK (nascimento < CURRENT_DATE);
 
 CREATE TABLE TB_Funcionario (
 	doc VARCHAR(9) PRIMARY KEY,
