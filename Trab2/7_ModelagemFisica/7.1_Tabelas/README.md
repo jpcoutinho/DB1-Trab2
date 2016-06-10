@@ -1,5 +1,5 @@
 # Prefixo para as tabelas
-| Tabela            | Prefixo         |
+| Tabela            | Alias           |
 | :-------------    | :-------------  |
 | Caixa             | CAX             |
 | Cliente           | CLI             |
