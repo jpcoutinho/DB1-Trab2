@@ -191,3 +191,13 @@ COMMENT ON {COLUMN TB_Vendeu.doc_CLI} IS 'Documento do cliente sendo XXXXXXXXX(9
 COMMENT ON {COLUMN TB_Vendeu.numero_CAX} IS 'Número da caixa em que a venda foi realizada';
 COMMENT ON {COLUMN TB_Vendeu.valor} IS 'Valor da venda';
 COMMENT ON {COLUMN TB_Vendeu.data} IS 'Timestamp da venda';
+
+ALTER TABLE TB_Caixa ADD FOREIGN KEY (tin_FRA) REFERENCES TB_Franquia (tin);
+
+ALTER TABLE TB_Cliente ADD FOREIGN KEY (doc_PES) REFERENCES TB_Pessoa (doc);
+
+ALTER TABLE TB_Competiu ADD FOREIGN KEY (ID_PAR) REFERENCES TB_Partida (ID);
+ALTER TABLE TB_Competiu ADD FOREIGN KEY (doc_CLI) REFERENCES TB_Cliente (doc_PES);
+
+ALTER TABLE TB_Comprou ADD FOREIGN KEY (numero_CAX) REFERENCES TB_Caixa (numero);
+ALTER TABLE TB_Comprou ADD FOREIGN KEY (doc_CLI) REFERENCES TB_Cliente (doc);
