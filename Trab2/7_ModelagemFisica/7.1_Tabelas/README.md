@@ -1,4 +1,4 @@
-# Prefixo para as tabelas
+# Alias para as tabelas
 | Tabela            | Alias           |
 | :-------------    | :-------------  |
 | Caixa             | CAX             |
