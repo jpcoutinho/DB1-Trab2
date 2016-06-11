@@ -1,26 +1,26 @@
 # Alias das tabelas
-| Tabela            | Alias           |
-| :-------------    | :-------------  |
-| Caixa             | CAX             |
-| Cliente           | CLI             |
-| Competiu          | CPU             |
-| Comprou           | CMP             |
-| ContatoFranquia   | COF             |
-| ContatoPessoa     | COP             |
-| Franquia          | FRA             |
-| Frequentou        | FRQ             |
-| Funcionario       | FUC             |
-| Ganhou            | GAN             |
-| Jogada            | JOG             |
-| Jogo              | JGO             |
-| JogoEmGrupo       | JGG             |
-| JogoIndividual    | JGI             |
-| Maquina           | MAQ             |
-| Mesa              | MES             |
-| Oferece           | OFE             |
-| Partida           | PAR             |
-| Pessoa            | PES             |
-| Vendeu            | VEN             |
+| Tabela               | Alias           |
+| :-------------       | :-------------  |
+| TB_Caixa             | CAX             |
+| TB_Cliente           | CLI             |
+| TB_Competiu          | CPU             |
+| TB_Comprou           | CMP             |
+| TB_ContatoFranquia   | COF             |
+| TB_ContatoPessoa     | COP             |
+| TB_Franquia          | FRA             |
+| TB_Frequentou        | FRQ             |
+| TB_Funcionario       | FUC             |
+| TB_Ganhou            | GAN             |
+| TB_Jogada            | JOG             |
+| TB_Jogo              | JGO             |
+| TB_JogoEmGrupo       | JGG             |
+| TB_JogoIndividual    | JGI             |
+| TB_Maquina           | MAQ             |
+| TB_Mesa              | MES             |
+| TB_Oferece           | OFE             |
+| TB_Partida           | PAR             |
+| TB_Pessoa            | PES             |
+| TB_Vendeu            | VEN             |
 
 # Mudanças nas tabelas
 | Antigo            | Novo                  | Motivo                                                  |
