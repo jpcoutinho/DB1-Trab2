@@ -13,9 +13,9 @@
         $conn = pg_connect($STRConnect);
         if $conn === false{
           $this->msg = "Não foi possivel conectar ao servidor";
-          return ;
+          return $id;
         }
-        $query = "INSERT INTO TB_Pessoa(doc,nome,tipoDoc,sexo,nascimento)";
+        $query = "INSERT INTO TB_Pessoa(doc,nome,tipoDoc,sexo,nascimento) VALUES ($1,$2,$3,$4,$5)";
         $parametros = array(&$doc,&$nome,&$tipoDoc,&$sexo,&$nascimento);
 
         $res = pg_query_params($conn,$query,$parametros);
