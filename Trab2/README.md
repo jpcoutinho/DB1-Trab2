@@ -31,4 +31,5 @@
 - [ ] O.K?
 
 ### 10 Aplicação PHP
-- [ ] O.K?
+- [ ] CRUD
+- [ ] Consultas
