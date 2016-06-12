@@ -80,6 +80,11 @@
           <div class="row column">
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="row">
+                <div class="medium-4 columns">
+                  <a class="success button" href="criar.php">Criar</a>
+                </div>
+              </div>
+              <div class="row">
                 <div class="medium-12 columns">
                   <table class="hover">
                     <thead>
@@ -91,16 +96,26 @@
                       foreach ($rowcol as $field => $value) {
                         echo '  <th>'. $field .'</th>'. "\n";
                       }
+                      echo '  <th></th>';
                       echo '</tr>';
                       ?>
                     </thead>
                     <tbody>
                       <?php
+                      $sqlPK = "SELECT a.attname AS data_type
+                        FROM   pg_index i
+                        JOIN   pg_attribute a ON a.attrelid = i.indrelid
+                        AND a.attnum = ANY(i.indkey)
+                        WHERE  i.indrelid = '". $tabela ."'::regclass AND i.indisprimary;";
+                      $res = $pdo->query($sqlPK);
+                      $PKs = $res->fetch(PDO::FETCH_ASSOC);
+                      $vPKs = array_values($PKs);
                       foreach ($pdo->query($sql) as $row) {
                         echo '<tr>'. "\n";
                         foreach ($rowcol as $field => $value) {
                           echo '<td>'. $row[$field] .'</td>'. "\n";
                         }
+                        echo ' <td><a class="success button" href="ler.php?id='.$row[$vPKs[0]].'">Ler</a></td>';
                         echo '</tr>';
                       }
                       ?>
