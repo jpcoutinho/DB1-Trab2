@@ -1,3 +1,5 @@
+SET SCHEMA 'trab2teste';
+
 -- Testa transacao_minima()
 -- OK
 INSERT INTO TB_Comprou VALUES( 3000 , 100000000 , 90000 , TO_DATE('19610120','YYYYMMDD') );
