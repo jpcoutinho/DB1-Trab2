@@ -1,7 +1,3 @@
-<?php
-  include('includes/config.php');
-  $pdo = BancodeDados::conecta();
-?>
 <!doctype html>
 <html class="no-js" lang="pt" dir="ltr">
   <head>
@@ -75,21 +71,9 @@
         <!-- Coloque conteudo a partir daqui -->
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="row column">
-            <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <a href="tabela.php?tnome=TB_Pessoa&tordem=nome">Pessoa</a>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <p>Pellentesque habitant morbi tristique senectus et netus et, ante.</p>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <img src= "assets/img/generic/rectangle-1.jpg">
-                </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="row">
+                <a href="tabela.php?ntb=TB_Pessoa&tbo=nome">Me clique</a>
               </div>
             </div>
           </div>
@@ -103,6 +87,3 @@
     <script src="js/app.js"></script>
   </body>
 </html>
-<?php
-  $pdo = BancodeDados::desconecta();
-?>

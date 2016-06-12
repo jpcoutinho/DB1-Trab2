@@ -2,8 +2,8 @@
   include('includes/config.php');
   $pdo = BancodeDados::conecta();
 
-  $tabela = 'db1teste' .$_GET["tnome"];
-  $ordem = $_GET["tordem"];
+  $tabela = 'db1teste.'. $_GET['ntb'];
+  $ordem = $_GET['tbo'];
 ?>
 <!doctype html>
 <html class="no-js" lang="pt" dir="ltr">
@@ -84,12 +84,12 @@
                   <table class="hover">
                     <thead>
                       <?php
-                      $sql = 'SELECT * FROM '. $_POST["TNome"] .' ORDER BY '. $_POST["TOrdem"] .' DESC';
+                      $sql = 'SELECT * FROM '. $tabela .' ORDER BY '. $ordem .' DESC';
                       $result = $pdo->query($sql);
                       $rowcol = $result->fetch(PDO::FETCH_ASSOC);
                       echo '<tr>'. "\n";
                       foreach ($rowcol as $field => $value) {
-                        echo '<th>'. $field .'</th>'. "\n";
+                        echo '  <th>'. $field .'</th>'. "\n";
                       }
                       echo '</tr>';
                       ?>
@@ -99,7 +99,7 @@
                       foreach ($pdo->query($sql) as $row) {
                         echo '<tr>'. "\n";
                         foreach ($rowcol as $field => $value) {
-                          echo '<td>'. $row[$field] .'</td>'. "\n";
+                          echo "\t\t\t\t\t\t" .'<td>'. $row[$field] .'</td>'. "\n";
                         }
                         echo '</tr>';
                       }
