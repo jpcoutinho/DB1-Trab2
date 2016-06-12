@@ -2,8 +2,8 @@
   include('includes/config.php');
   include('includes/tbcodes.php');
   $pdo = BancodeDados::conecta();
-  $tabela = 'db1teste.'. ConvertCodes($_GET['ntb']);
-  $ordem = $_GET['tbo'];
+
+  $tabela = 'db1teste.'. $_GET['ntb'];
 ?>
 <!doctype html>
 <html class="no-js" lang="pt" dir="ltr">
@@ -78,66 +78,23 @@
         <!-- Coloque conteudo a partir daqui -->
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="row column">
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="row">
-                <div class="medium-12 columns callout MarginTop">
-                  <nav aria-label="You are here:" role="navigation">
-                    <ul class="breadcrumbs">
-                      <li><a href="index.php">Home</a></li>
-                      <li>
-                        <span class="show-for-sr">Current: </span> Visualização de tabela
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              <div class="row">
-                <div class="medium-12 columns">
-                  <?php
-                  echo '<a class="expanded success button" href="inserir.php?ntb='.$_GET['ntb'].'">Inserir</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="row">
-                <div class="medium-12 columns">
-                  <table class="hover">
-                    <thead>
-                      <?php
-                      $sql = 'SELECT * FROM '. $tabela .' ORDER BY '. $ordem .' ASC';
-                      $result = $pdo->query($sql);
-                      $rowcol = $result->fetch(PDO::FETCH_ASSOC);
-                      echo '<tr>'. "\n";
-                      foreach ($rowcol as $field => $value) {
-                        echo '  <th>'. $field .'</th>'. "\n";
-                      }
-                      echo '  <th></th>';
-                      echo '</tr>';
-                      ?>
-                    </thead>
-                    <tbody>
-                      <?php
-                      $sqlPK = "SELECT a.attname AS data_type
-                        FROM   pg_index i
-                        JOIN   pg_attribute a ON a.attrelid = i.indrelid
-                        AND a.attnum = ANY(i.indkey)
-                        WHERE  i.indrelid = '". $tabela ."'::regclass AND i.indisprimary;";
-                      $res = $pdo->query($sqlPK);
-                      $PKs = $res->fetch(PDO::FETCH_ASSOC);
-                      $vPKs = array_values($PKs);
-                      foreach ($pdo->query($sql) as $row) {
-                        echo '<tr>'. "\n";
-                        foreach ($rowcol as $field => $value) {
-                          echo '<td>'. $row[$field] .'</td>'. "\n";
-                        }
-                        echo ' <td><a class="button" href="ler.php?id='.$row[$vPKs[0]].'">Ler</a></td>';
-                        echo '</tr>';
-                      }
-                      ?>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+            <form action="inserir.php" method="post">
+              <?php
+              $sql = 'SELECT * FROM '. $tabela;
+              $result = $pdo->query($sql);
+              $rowcol = $result->fetch(PDO::FETCH_ASSOC);
+              $count = 0;
+              foreach ($rowcol as $field => $value) {
+                echo '<div class="row">';
+                echo '<div class="medium-12 columns">';
+                echo '<label>'$field;
+                echo '<input type="text" placeholder="'. $field .''. $count .'">';
+                echo '</label>';
+                echo "</div>";
+                echo "</div>";
+              }
+              ?>
+            </form>
           </div>
         </div>
         <!-- Fim do conteudo -->
@@ -149,6 +106,3 @@
     <script src="js/app.js"></script>
   </body>
 </html>
-<?php
-  $pdo = BancodeDados::desconecta();
-?>
