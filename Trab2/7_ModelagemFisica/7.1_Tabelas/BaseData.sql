@@ -43,3 +43,62 @@ INSERT INTO TB_Cliente VALUES ('100000006' , NULL );
 INSERT INTO TB_Cliente VALUES ('100000007' , NULL );
 INSERT INTO TB_Cliente VALUES ('100000008' , NULL );
 
+-- Jogos
+INSERT INTO TB_Jogo VALUES ( 'Slot' , 1 );
+INSERT INTO TB_Jogo VALUES ( 'Keno' , 2 );
+INSERT INTO TB_Jogo VALUES ( 'Pai Gow Poker' , 10 );
+INSERT INTO TB_Jogo VALUES ( 'Black Jack' , 7 );
+INSERT INTO TB_Jogo VALUES ( 'Bingo' , 16 );
+INSERT INTO TB_Jogo VALUES ( 'Baccarat' , 7 );
+INSERT INTO TB_Jogo VALUES ( 'Wheel of Fortune' , 3 );
+INSERT INTO TB_Jogo VALUES ( 'Roulette' , 4 );
+INSERT INTO TB_Jogo VALUES ( 'Poker' , 20 );
+INSERT INTO TB_Jogo VALUES ( 'Buraco' , 15 );
+INSERT INTO TB_Jogo VALUES ( 'Truco' , 13 );
+INSERT INTO TB_Jogo VALUES ( 'Canastra' , 19 );
+INSERT INTO TB_Jogo VALUES ( 'Sueca' , 24 );
+
+
+-- Jogos individuais
+INSERT INTO TB_JogoIndividual VALUES ( 'Slot' );
+INSERT INTO TB_JogoIndividual VALUES ( 'Keno' );
+INSERT INTO TB_JogoIndividual VALUES ( 'Pai Gow Poker' );
+INSERT INTO TB_JogoIndividual VALUES ( 'Black Jack' );
+
+-- Jogos em grupo
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Bingo' , 2 , 100 , 0 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Baccarat' , 2 , 2 , 2 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Wheel of Fortune' , 4 , 10 , 0 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Roulette' , 2 , 6 , 0 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Poker' , 2 , 10 , 0 );
+
+
+
+
+
+
+
+
+
+-- Franquias
+
+INSERT INTO TB_Franquia VALUES ('700600500' , 'Magnatas' );
+INSERT INTO TB_Franquia VALUES ('700600501' , 'Tangiers' );
+INSERT INTO TB_Franquia VALUES ('700600502' , 'The Cooler' );
+
+-- Patrimonio - Caixa
+
+INSERT INTO TB_Caixa VALUES ( 3000 , '700600500' );
+INSERT INTO TB_Caixa VALUES ( 3001 , '700600500' );
+INSERT INTO TB_Caixa VALUES ( 3002 , '700600500' );
+INSERT INTO TB_Caixa VALUES ( 3003 , '700600500' );
+INSERT INTO TB_Caixa VALUES ( 3004 , '700600500' );
+INSERT INTO TB_Caixa VALUES ( 3005 , '700600500' );
+INSERT INTO TB_Caixa VALUES ( 3006 , '700600501' );
+INSERT INTO TB_Caixa VALUES ( 3007 , '700600501' );
+INSERT INTO TB_Caixa VALUES ( 3008 , '700600501' );
+INSERT INTO TB_Caixa VALUES ( 3009 , '700600501' );
+INSERT INTO TB_Caixa VALUES ( 3010 , '700600502' );
+
+--  
+
