@@ -75,7 +75,7 @@ INSERT INTO TB_Jogo VALUES ( 'Buraco' , 15 );
 INSERT INTO TB_Jogo VALUES ( 'Truco' , 13 );
 INSERT INTO TB_Jogo VALUES ( 'Canasta' , 19 );
 INSERT INTO TB_Jogo VALUES ( 'Sueca' , 24 );
-INSERT INTO TB_Jogo VALUES ( 'Cerco' , 60 )
+INSERT INTO TB_Jogo VALUES ( 'Cerco' , 60 );
 
 -- Jogos individuais
 INSERT INTO TB_JogoIndividual VALUES ( 'Slot' );
