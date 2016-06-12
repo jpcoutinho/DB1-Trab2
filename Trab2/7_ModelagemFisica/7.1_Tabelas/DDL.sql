@@ -281,3 +281,40 @@ ALTER TABLE TB_Vendeu ADD FOREIGN KEY (numero_CAX) REFERENCES TB_Caixa (numero);
 ALTER TABLE TB_Pessoa
 	ADD CONSTRAINT VerificaNascimentoNaoFuturo
 		CHECK (nascimento < CURRENT_DATE);
+
+
+-- Functions And Triggers
+
+DROP FUNCTION transacao_minima() CASCADE;
+CREATE FUNCTION transacao_minima()
+	RETURNS trigger AS
+		$BODY$
+			DECLARE
+				aux_valor INT;
+			BEGIN
+				IF NEW.valor < 50000 THEN
+					NEW.valor = 50000;
+				END IF;
+				
+				RETURN NEW;
+			END;
+		$BODY$
+	LANGUAGE plpgsql;
+	
+CREATE TRIGGER checa_transacao_minima
+	BEFORE INSERT OR UPDATE
+		ON TB_Comprou
+			FOR EACH ROW
+				EXECUTE PROCEDURE transacao_minima()
+		
+	
+CREATE TABLE TB_Comprou (
+	numero_CAX INT,
+	doc_CLI VARCHAR(9),
+	valor NUMERIC NOT NULL,
+	data TIMESTAMP,
+	PRIMARY KEY (numero_CAX,doc_CLI,data)
+);
+
+
+
