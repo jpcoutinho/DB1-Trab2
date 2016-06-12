@@ -208,7 +208,7 @@ COMMENT ON COLUMN TB_JogoEmGrupo.equipes IS 'Número de equipes';
 COMMENT ON COLUMN TB_JogoEmGrupo.nome_JGO IS 'Nome do jogo';
 
 COMMENT ON COLUMN TB_Maquina.snumber IS 'Número serial da maquina';
-COMMENT ON COLUMN TB_Maquina.tin_FRA IS 'Número TIN da franquia sendo XX-XXXXXXX'
+COMMENT ON COLUMN TB_Maquina.tin_FRA IS 'Número TIN da franquia sendo XX-XXXXXXX';
 
 COMMENT ON COLUMN TB_Mesa.numero IS 'Número da mesa';
 COMMENT ON COLUMN TB_Mesa.nome_JGG IS 'Nome do jogo em grupo';
@@ -308,13 +308,5 @@ CREATE TRIGGER checa_transacao_minima
 				EXECUTE PROCEDURE transacao_minima()
 		
 	
-CREATE TABLE TB_Comprou (
-	numero_CAX INT,
-	doc_CLI VARCHAR(9),
-	valor NUMERIC NOT NULL,
-	data TIMESTAMP,
-	PRIMARY KEY (numero_CAX,doc_CLI,data)
-);
-
 
 
