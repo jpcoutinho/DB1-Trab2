@@ -55,9 +55,9 @@ INSERT INTO TB_Jogo VALUES ( 'Roulette' , 4 );
 INSERT INTO TB_Jogo VALUES ( 'Poker' , 20 );
 INSERT INTO TB_Jogo VALUES ( 'Buraco' , 15 );
 INSERT INTO TB_Jogo VALUES ( 'Truco' , 13 );
-INSERT INTO TB_Jogo VALUES ( 'Canastra' , 19 );
+INSERT INTO TB_Jogo VALUES ( 'Canasta' , 19 );
 INSERT INTO TB_Jogo VALUES ( 'Sueca' , 24 );
-
+INSERT INTO TB_Jogo VALUES ( 'Cerco' , 60 )
 
 -- Jogos individuais
 INSERT INTO TB_JogoIndividual VALUES ( 'Slot' );
@@ -71,11 +71,11 @@ INSERT INTO TB_JogoEmGrupo VALUES ( 'Baccarat' , 2 , 2 , 2 );
 INSERT INTO TB_JogoEmGrupo VALUES ( 'Wheel of Fortune' , 4 , 10 , 0 );
 INSERT INTO TB_JogoEmGrupo VALUES ( 'Roulette' , 2 , 6 , 0 );
 INSERT INTO TB_JogoEmGrupo VALUES ( 'Poker' , 2 , 10 , 0 );
-
-
-
-
-
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Buraco' , 4 , 4 , 2 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Truco' , 4 , 8 , 2 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Canasta' , 2 , 6 , 2 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Sueca' , 4 , 4 , 2 );
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Cerco' , 2 , 12 , 4 );
 
 
 
