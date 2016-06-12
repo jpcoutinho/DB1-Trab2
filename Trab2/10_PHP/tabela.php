@@ -1,6 +1,9 @@
 <?php
   include('includes/config.php');
   $pdo = BancodeDados::conecta();
+
+  $tabela = 'db1teste' .$_GET["tnome"];
+  $ordem = $_GET["tordem"];
 ?>
 <!doctype html>
 <html class="no-js" lang="pt" dir="ltr">
@@ -75,20 +78,34 @@
         <!-- Coloque conteudo a partir daqui -->
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="row column">
-            <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <a href="tabela.php?tnome=TB_Pessoa&tordem=nome">Pessoa</a>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <p>Pellentesque habitant morbi tristique senectus et netus et, ante.</p>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <img src= "assets/img/generic/rectangle-1.jpg">
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="row">
+                <div class="medium-12 columns">
+                  <table class="hover">
+                    <thead>
+                      <?php
+                      $sql = 'SELECT * FROM '. $_POST["TNome"] .' ORDER BY '. $_POST["TOrdem"] .' DESC';
+                      $result = $pdo->query($sql);
+                      $rowcol = $result->fetch(PDO::FETCH_ASSOC);
+                      echo '<tr>'. "\n";
+                      foreach ($rowcol as $field => $value) {
+                        echo '<th>'. $field .'</th>'. "\n";
+                      }
+                      echo '</tr>';
+                      ?>
+                    </thead>
+                    <tbody>
+                      <?php
+                      foreach ($pdo->query($sql) as $row) {
+                        echo '<tr>'. "\n";
+                        foreach ($rowcol as $field => $value) {
+                          echo '<td>'. $row[$field] .'</td>'. "\n";
+                        }
+                        echo '</tr>';
+                      }
+                      ?>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

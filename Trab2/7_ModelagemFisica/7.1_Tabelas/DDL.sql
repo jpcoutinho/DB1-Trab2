@@ -129,115 +129,111 @@ CREATE TABLE TB_Vendeu (
 	PRIMARY KEY (doc_CLI,numero_CAX,valor)
 );
 
-#################################################################################
-################################# COMENTÁRIOS ###################################
-#################################################################################
+-- COMENTÁRIOS
 
-#### Tabelas
-COMMENT ON {TABLE TB_Caixa} IS 'Registro dos caixas de compra e venda';
-COMMENT ON {TABLE TB_Cliente} IS 'Registro dos clientes';
-COMMENT ON {TABLE TB_Competiu} IS 'TB_Cliente competiu em X TB_Partida';
-COMMENT ON {TABLE TB_Comprou} IS 'TB_Cliente comprou de X TB_Caixa';
-COMMENT ON {TABLE TB_ContatoFranquia} IS 'Contato da TB_Franquia';
-COMMENT ON {TABLE TB_ContatoPessoa} IS 'Contato da TB_Pessoa';
-COMMENT ON {TABLE TB_Franquia} IS 'Registro da franquia';
-COMMENT ON {TABLE TB_Frequentou} IS 'TB_Cliente frequentou X TB_Franquia';
-COMMENT ON {TABLE TB_Funcionario} IS 'Registro dos funcionários';
-COMMENT ON {TABLE TB_Ganhou} IS 'TB_Cliente ganhou X TB_Partida';
-COMMENT ON {TABLE TB_Jogada} IS 'TB_Cliente realizou uma jogada de um TB_JogoIndividual em X TB_Maquina';
-COMMENT ON {TABLE TB_Jogo} IS 'Registro dos jogos';
-COMMENT ON {TABLE TB_JogoEmGrupo} IS 'Registro dos jogos em grupo';
-COMMENT ON {TABLE TB_JogoIndividual} IS 'Registro dos jogos individuais';
-COMMENT ON {TABLE TB_Maquina} IS 'Registro das máquinas';
-COMMENT ON {TABLE TB_Mesa} IS 'Registro das mesas';
-COMMENT ON {TABLE TB_Oferece} IS 'TB_Maquina oferece um X TB_JogoIndividual';
-COMMENT ON {TABLE TB_Partida} IS 'Registro das partidas';
-COMMENT ON {TABLE TB_Pessoa} IS 'Registro das pessoas';
-COMMENT ON {TABLE TB_Vendeu} IS 'TB_Caixa vendeu para X TB_Cliente';
+-- Tabelas
+COMMENT ON TABLE TB_Caixa IS 'Registro dos caixas de compra e venda';
+COMMENT ON TABLE TB_Cliente IS 'Registro dos clientes';
+COMMENT ON TABLE TB_Competiu IS 'TB_Cliente competiu em X TB_Partida';
+COMMENT ON TABLE TB_Comprou IS 'TB_Cliente comprou de X TB_Caixa';
+COMMENT ON TABLE TB_ContatoFranquia IS 'Contato da TB_Franquia';
+COMMENT ON TABLE TB_ContatoPessoa IS 'Contato da TB_Pessoa';
+COMMENT ON TABLE TB_Franquia IS 'Registro da franquia';
+COMMENT ON TABLE TB_Frequentou IS 'TB_Cliente frequentou X TB_Franquia';
+COMMENT ON TABLE TB_Funcionario IS 'Registro dos funcionários';
+COMMENT ON TABLE TB_Ganhou IS 'TB_Cliente ganhou X TB_Partida';
+COMMENT ON TABLE TB_Jogada IS 'TB_Cliente realizou uma jogada de um TB_JogoIndividual em X TB_Maquina';
+COMMENT ON TABLE TB_Jogo IS 'Registro dos jogos';
+COMMENT ON TABLE TB_JogoEmGrupo IS 'Registro dos jogos em grupo';
+COMMENT ON TABLE TB_JogoIndividual IS 'Registro dos jogos individuais';
+COMMENT ON TABLE TB_Maquina IS 'Registro das máquinas';
+COMMENT ON TABLE TB_Mesa IS 'Registro das mesas';
+COMMENT ON TABLE TB_Oferece IS 'TB_Maquina oferece um X TB_JogoIndividual';
+COMMENT ON TABLE TB_Partida IS 'Registro das partidas';
+COMMENT ON TABLE TB_Pessoa IS 'Registro das pessoas';
+COMMENT ON TABLE TB_Vendeu IS 'TB_Caixa vendeu para X TB_Cliente';
 
-#### Colunas
-COMMENT ON {COLUMN TB_Caixa.numero} IS 'Número de identificação do caixa';
-COMMENT ON {COLUMN TB_Caixa.tin_FRA} IS 'Número do TIN da franquia';
+-- Colunas
+COMMENT ON COLUMN TB_Caixa.numero IS 'Número de identificação do caixa';
+COMMENT ON COLUMN TB_Caixa.tin_FRA IS 'Número do TIN da franquia';
 
-COMMENT ON {COLUMN TB_Cliente.doc_PES} IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Cliente.pseudominio} IS 'Nome fantasia utilizado pelo jogador, mantendo-se anônimo';
+COMMENT ON COLUMN TB_Cliente.doc_PES IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Cliente.pseudominio IS 'Nome fantasia utilizado pelo jogador, mantendo-se anônimo';
 
-COMMENT ON {COLUMN TB_Competiu.ID_PAR} IS 'Número de identificação da partida';
-COMMENT ON {COLUMN TB_Competiu.doc_CLI} IS 'Documento da cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Competiu.apostou} IS 'Valor da aposta';
-COMMENT ON {COLUMN TB_Competiu.ganhou} IS 'Quanto ganhou';
+COMMENT ON COLUMN TB_Competiu.ID_PAR IS 'Número de identificação da partida';
+COMMENT ON COLUMN TB_Competiu.doc_CLI IS 'Documento da cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Competiu.apostou IS 'Valor da aposta';
+COMMENT ON COLUMN TB_Competiu.ganhou IS 'Quanto ganhou';
 
-COMMENT ON {COLUMN TB_Comprou.numero_CAX} IS 'Número da identificação do caixa onde foi realizada a compra';
-COMMENT ON {COLUMN TB_Comprou.doc_CLI} IS 'Documento da cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Comprou.valor} IS 'Valor da compra';
-COMMENT ON {COLUMN TB_Comprou.data} IS 'Data da compra';
+COMMENT ON COLUMN TB_Comprou.numero_CAX IS 'Número da identificação do caixa onde foi realizada a compra';
+COMMENT ON COLUMN TB_Comprou.doc_CLI IS 'Documento da cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Comprou.valor IS 'Valor da compra';
+COMMENT ON COLUMN TB_Comprou.data IS 'Data da compra';
 
-COMMENT ON {COLUMN TB_ContatoFranquia.tin_FRA} IS 'Número TIN da franquia sendo XX-XXXXXXX';
-COMMENT ON {COLUMN TB_ContatoFranquia.contato} IS 'XXXXXXXXXXXXXX -> DDI DDD Numero';
+COMMENT ON COLUMN TB_ContatoFranquia.tin_FRA IS 'Número TIN da franquia sendo XX-XXXXXXX';
+COMMENT ON COLUMN TB_ContatoFranquia.contato IS 'XXXXXXXXXXXXXX -> DDI DDD Numero';
 
-COMMENT ON {COLUMN TB_ContatoPessoa.doc_PES} IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_ContatoPessoa.contato} IS 'XXXXXXXXXXXXXX -> DDI DDD Numero';
+COMMENT ON COLUMN TB_ContatoPessoa.doc_PES IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_ContatoPessoa.contato IS 'XXXXXXXXXXXXXX -> DDI DDD Numero';
 
-COMMENT ON {COLUMN TB_Franquia.tin} IS 'Número TIN da franquia sendo XX-XXXXXXX';
-COMMENT ON {COLUMN TB_Franquia.nome} IS 'Nome da franquia';
-COMMENT ON {COLUMN TB_Franquia.endereco} IS 'Endereço da franquia';
+COMMENT ON COLUMN TB_Franquia.tin IS 'Número TIN da franquia sendo XX-XXXXXXX';
+COMMENT ON COLUMN TB_Franquia.nome IS 'Nome da franquia';
+COMMENT ON COLUMN TB_Franquia.endereco IS 'Endereço da franquia';
 
-COMMENT ON {COLUMN TB_Frequentou.doc_CLI} IS 'Documento do cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Frequentou.tin_FRA} IS 'Número TIN da franquia sendo XX-XXXXXXX';
-COMMENT ON {COLUMN TB_Frequentou.data} IS 'Dia e hora que o cliente frequentou a franquia';
+COMMENT ON COLUMN TB_Frequentou.doc_CLI IS 'Documento do cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Frequentou.tin_FRA IS 'Número TIN da franquia sendo XX-XXXXXXX';
+COMMENT ON COLUMN TB_Frequentou.data IS 'Dia e hora que o cliente frequentou a franquia';
 
-COMMENT ON {COLUMN TB_Funcionario.doc_PES} IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Funcionario.ri} IS 'Número RI do funcionario';
+COMMENT ON COLUMN TB_Funcionario.doc_PES IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Funcionario.ri IS 'Número RI do funcionario';
 
-COMMENT ON {COLUMN TB_Ganhou.ID_PAR} IS 'Identificação da partida que foi ganhada';
-COMMENT ON {COLUMN TB_Ganhou.doc_CLI} IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Ganhou.ID_PAR IS 'Identificação da partida que foi ganhada';
+COMMENT ON COLUMN TB_Ganhou.doc_CLI IS 'Documento da pessoa sendo XXXXXXXXX(9) numérico ou alfanumérico';
 
-COMMENT ON {COLUMN TB_Jogada.doc_CLI} IS 'Documento do cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Jogada.snumber_MAQ} IS 'Numero serial da máquina';
-COMMENT ON {COLUMN TB_Jogada.nome_JGO} IS 'Nome do jogo';
-COMMENT ON {COLUMN TB_Jogada.data} IS 'Timestamp da jogada';
-COMMENT ON {COLUMN TB_Jogada.apostou} IS 'Quanto foi apostado na jogada';
-COMMENT ON {COLUMN TB_Jogada.ganhou} IS 'Quanto foi ganhado na partida';
+COMMENT ON COLUMN TB_Jogada.doc_CLI IS 'Documento do cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Jogada.snumber_MAQ IS 'Numero serial da máquina';
+COMMENT ON COLUMN TB_Jogada.nome_JGO IS 'Nome do jogo';
+COMMENT ON COLUMN TB_Jogada.data IS 'Timestamp da jogada';
+COMMENT ON COLUMN TB_Jogada.apostou IS 'Quanto foi apostado na jogada';
+COMMENT ON COLUMN TB_Jogada.ganhou IS 'Quanto foi ganhado na partida';
 
-COMMENT ON {COLUMN TB_Jogo.nome} IS 'Nome do jogo';
-COMMENT ON {COLUMN TB_Jogo.duracao} IS 'Duração do jogo em minutos';
+COMMENT ON COLUMN TB_Jogo.nome IS 'Nome do jogo';
+COMMENT ON COLUMN TB_Jogo.duracao IS 'Duração do jogo em minutos';
 
-COMMENT ON {COLUMN TB_JogoEmGrupo.nome_JGO} IS 'Nome do jogo';
-COMMENT ON {COLUMN TB_JogoEmGrupo.jogadores_min} IS 'Quantidade minima de jogadores';
-COMMENT ON {COLUMN TB_JogoEmGrupo.jogadores_max} IS 'Quantidade máxima de jogadores';
-COMMENT ON {COLUMN TB_JogoEmGrupo.equipes} IS 'Número de equipes';
+COMMENT ON COLUMN TB_JogoEmGrupo.nome_JGO IS 'Nome do jogo';
+COMMENT ON COLUMN TB_JogoEmGrupo.jogadores_min IS 'Quantidade minima de jogadores';
+COMMENT ON COLUMN TB_JogoEmGrupo.jogadores_max IS 'Quantidade máxima de jogadores';
+COMMENT ON COLUMN TB_JogoEmGrupo.equipes IS 'Número de equipes';
 
-COMMENT ON {COLUMN TB_JogoEmGrupo.nome_JGO} IS 'Nome do jogo';
+COMMENT ON COLUMN TB_JogoEmGrupo.nome_JGO IS 'Nome do jogo';
 
-COMMENT ON {COLUMN TB_Maquina.snumber} IS 'Número serial da maquina';
-COMMENT ON {COLUMN TB_Maquina.tin_FRA} IS 'Número TIN da franquia sendo XX-XXXXXXX'
+COMMENT ON COLUMN TB_Maquina.snumber IS 'Número serial da maquina';
+COMMENT ON COLUMN TB_Maquina.tin_FRA IS 'Número TIN da franquia sendo XX-XXXXXXX'
 
-COMMENT ON {COLUMN TB_Mesa.numero} IS 'Número da mesa';
-COMMENT ON {COLUMN TB_Mesa.nome_JGG} IS 'Nome do jogo em grupo';
-COMMENT ON {COLUMN TB_Mesa.tin_FRA} IS 'Número TIN da franquia sendo XX-XXXXXXX';
+COMMENT ON COLUMN TB_Mesa.numero IS 'Número da mesa';
+COMMENT ON COLUMN TB_Mesa.nome_JGG IS 'Nome do jogo em grupo';
+COMMENT ON COLUMN TB_Mesa.tin_FRA IS 'Número TIN da franquia sendo XX-XXXXXXX';
 
-COMMENT ON {COLUMN TB_Oferece.nome_JGI} IS 'Nome do jogo individual';
-COMMENT ON {COLUMN TB_Oferece.snumber_MAQ} IS 'Número de série da maquina';
+COMMENT ON COLUMN TB_Oferece.nome_JGI IS 'Nome do jogo individual';
+COMMENT ON COLUMN TB_Oferece.snumber_MAQ IS 'Número de série da maquina';
 
-COMMENT ON {COLUMN TB_Partida.ID} IS 'ID da partida AUTO-INCREMENT';
-COMMENT ON {COLUMN TB_Partida.doc_FUC} IS 'Documento do funcionário sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Partida.numero_MES} IS 'Número da mesa';
-COMMENT ON {COLUMN TB_Partida.data} IS 'Timestamp da partida';
+COMMENT ON COLUMN TB_Partida.ID IS 'ID da partida AUTO-INCREMENT';
+COMMENT ON COLUMN TB_Partida.doc_FUC IS 'Documento do funcionário sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Partida.numero_MES IS 'Número da mesa';
+COMMENT ON COLUMN TB_Partida.data IS 'Timestamp da partida';
 
-COMMENT ON {COLUMN TB_Pessoa.doc} IS 'XXXXXXXXX(9) Sendo numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Pessoa.nome} IS 'Nome da pessoa com no max 40 caracteres';
-COMMENT ON {COLUMN TB_Pessoa.tipoDoc} IS 'Tipo do documento da pessoa Eg:. 02';
-COMMENT ON {COLUMN TB_Pessoa.sexo} IS 'Sexo da pessoa Eg:. M, F, O';
-COMMENT ON {COLUMN TB_Pessoa.nascimento} IS 'Data de nascimento da pessoa sendo AAAAMMDD';
+COMMENT ON COLUMN TB_Pessoa.doc IS 'XXXXXXXXX(9) Sendo numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Pessoa.nome IS 'Nome da pessoa com no max 40 caracteres';
+COMMENT ON COLUMN TB_Pessoa.tipoDoc IS 'Tipo do documento da pessoa Eg:. 02';
+COMMENT ON COLUMN TB_Pessoa.sexo IS 'Sexo da pessoa Eg:. M, F, O';
+COMMENT ON COLUMN TB_Pessoa.nascimento IS 'Data de nascimento da pessoa sendo AAAAMMDD';
 
-COMMENT ON {COLUMN TB_Vendeu.doc_CLI} IS 'Documento do cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
-COMMENT ON {COLUMN TB_Vendeu.numero_CAX} IS 'Número da caixa em que a venda foi realizada';
-COMMENT ON {COLUMN TB_Vendeu.valor} IS 'Valor da venda';
-COMMENT ON {COLUMN TB_Vendeu.data} IS 'Timestamp da venda';
+COMMENT ON COLUMN TB_Vendeu.doc_CLI IS 'Documento do cliente sendo XXXXXXXXX(9) numérico ou alfanumérico';
+COMMENT ON COLUMN TB_Vendeu.numero_CAX IS 'Número da caixa em que a venda foi realizada';
+COMMENT ON COLUMN TB_Vendeu.valor IS 'Valor da venda';
+COMMENT ON COLUMN TB_Vendeu.data IS 'Timestamp da venda';
 
-#################################################################################
-################################# FOREIGN KEY's #################################
-#################################################################################
+-- FOREIGN KEY's
 
 ALTER TABLE TB_Caixa ADD FOREIGN KEY (tin_FRA) REFERENCES TB_Franquia (tin);
 
@@ -280,9 +276,7 @@ ALTER TABLE TB_Partida ADD FOREIGN KEY (numero_MES) REFERENCES TB_Mesa (numero);
 ALTER TABLE TB_Vendeu ADD FOREIGN KEY (doc_CLI) REFERENCES TB_Cliente (doc_PES);
 ALTER TABLE TB_Vendeu ADD FOREIGN KEY (numero_CAX) REFERENCES TB_Caixa (numero);
 
-#################################################################################
-################################# Constraint's ##################################
-#################################################################################
+-- Constraint's
 
 ALTER TABLE TB_Pessoa
 	ADD CONSTRAINT VerificaNascimentoNaoFuturo

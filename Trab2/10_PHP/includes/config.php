@@ -1,10 +1,9 @@
 <?php
   class BancodeDados{
-    private static $bdEnd = 'localhost'; // Host
-    private static $bdPorta = '5432';
-    private static $bdUsr = 'usuario'; // Usuário
-    private static $bdUsrPsw = 'senha'; // Senha
-    private static $bdNome = 'nomedb'; // Nome do banco de dados
+    private static $bdEnd = '127.0.0.1'; // Host
+    private static $bdUsr = 'postgres'; // Usuário
+    private static $bdUsrPsw = '12345'; // Senha
+    private static $bdNome = 'bd1a3wb161018'; // Nome do banco de dados
 
     private static $coneccao = NULL;
 
@@ -15,7 +14,7 @@
     public static function conecta(){
       if(NULL==self::$coneccao){
         try{
-          self::$coneccao =  new PDO("pgsql:host=".self::$bdEnd.";"."port=".self::$bdPorta.";"."dbname=".self::$bdNome, self::$bdUsr, self::$bdUsrPsw);
+          self::$coneccao =  new PDO("pgsql:host=".self::$bdEnd.";"."dbname=".self::$bdNome, self::$bdUsr, self::$bdUsrPsw);
         }
         /* Caso haja algum erro na conecção */
         catch(PDOException $e){
