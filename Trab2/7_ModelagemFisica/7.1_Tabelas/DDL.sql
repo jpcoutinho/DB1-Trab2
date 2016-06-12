@@ -290,10 +290,10 @@ CREATE FUNCTION transacao_minima()
 	RETURNS trigger AS
 		$BODY$
 			DECLARE
-				aux_valor INT;
 			BEGIN
 				IF NEW.valor < 50000 THEN
-					NEW.valor = 50000;
+				RAISE EXCEPTION 'Transação não efetuada'
+				      USING HINT = 'Valor abaixo do minimo';
 				END IF;
 				
 				RETURN NEW;
