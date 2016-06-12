@@ -1,5 +1,5 @@
-CREATE SCHEMA Trab2Teste;
-SET SCHEMA 'Trab2Teste';
+CREATE SCHEMA trab2teste;
+SET SCHEMA 'trab2teste';
 
 CREATE TABLE TB_Caixa (
 	numero INT PRIMARY KEY,
