@@ -15,7 +15,7 @@
         <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
           <div class="title-bar-left">
             <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-            <span class="title-bar-title">Foundation</span>
+            <span class="title-bar-title">INF1383</span>
           </div>
           <div class="title-bar-right">
             <span class="title-bar-title">Login</span>
@@ -42,7 +42,7 @@
         <div id="widemenu" class="top-bar">
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
-              <li class="menu-text">Foundation</li>
+              <li class="menu-text">INF1383</li>
               <li class="has-submenu">
                 <a href="#">Item 1</a>
                 <ul class="menu submenu vertical" data-submenu>
@@ -72,8 +72,117 @@
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="row column">
             <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="row">
-                <a href="tabela.php?ntb=TB_Pessoa&tbo=nome">Me clique</a>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Caixa&tbo=numero">Caixa</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Cliente&tbo=doc_PES">Cliente</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Competiu&tbo=doc_CLI">Pessoa</a>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Comprou&tbo=doc_CLI">Comprou</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_ContatoFranquia&tbo=tin_FRA">Contato Franquia</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_ContatoPessoa&tbo=doc_PES">Contato Pessoa</a>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Franquia&tbo=tin">Franquia</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Frequentou&tbo=doc_CLI">Frequentou</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Funcionario&tbo=doc_PES">Funcionário</a>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Ganhou&tbo=doc_CLI">Ganhou</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Jogada&tbo=doc_CLI">Jogada</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Jogo&tbo=nome">Jogo</a>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_JogoEmGrupo&tbo=nome_JGO">Jogo em Grupo</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_JogoIndividual&tbo=nome_JGO">Jogo Individual</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Maquina&tbo=snumber">Máquina</a>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Mesa&tbo=numero">Mesa</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Oferece&tbo=nome_JGI">Oferece</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Partida&tbo=ID">Partida</a>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Pessoa&tbo=nome">Pessoa</a>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <a href="tabela.php?ntb=TB_Vendeu&tbo=doc_CLI">Vendeu</a>
+                </div>
               </div>
             </div>
           </div>

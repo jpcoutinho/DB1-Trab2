@@ -22,7 +22,7 @@
         <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
           <div class="title-bar-left">
             <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-            <span class="title-bar-title">Foundation</span>
+            <span class="title-bar-title">INF1383</span>
           </div>
           <div class="title-bar-right">
             <span class="title-bar-title">Login</span>
@@ -49,7 +49,7 @@
         <div id="widemenu" class="top-bar">
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
-              <li class="menu-text">Foundation</li>
+              <li class="menu-text">INF1383</li>
               <li class="has-submenu">
                 <a href="#">Item 1</a>
                 <ul class="menu submenu vertical" data-submenu>
@@ -84,7 +84,7 @@
                   <table class="hover">
                     <thead>
                       <?php
-                      $sql = 'SELECT * FROM '. $tabela .' ORDER BY '. $ordem .' DESC';
+                      $sql = 'SELECT * FROM '. $tabela .' ORDER BY '. $ordem .' ASC';
                       $result = $pdo->query($sql);
                       $rowcol = $result->fetch(PDO::FETCH_ASSOC);
                       echo '<tr>'. "\n";
@@ -99,7 +99,7 @@
                       foreach ($pdo->query($sql) as $row) {
                         echo '<tr>'. "\n";
                         foreach ($rowcol as $field => $value) {
-                          echo "\t\t\t\t\t\t" .'<td>'. $row[$field] .'</td>'. "\n";
+                          echo '<td>'. $row[$field] .'</td>'. "\n";
                         }
                         echo '</tr>';
                       }
