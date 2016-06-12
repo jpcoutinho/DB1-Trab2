@@ -19,7 +19,7 @@ CREATE FUNCTION transacao_minima()
 	
 CREATE TRIGGER checa_transacao_minima
 	BEFORE INSERT OR UPDATE
-		ON TB_Comprou
+		ON TB_Comprou , TB_Vendeu
 			FOR EACH ROW
 				EXECUTE PROCEDURE transacao_minima()
 		
