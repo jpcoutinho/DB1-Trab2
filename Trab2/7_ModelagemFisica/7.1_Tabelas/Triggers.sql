@@ -29,8 +29,8 @@ CREATE TRIGGER checa_transacao_minima
 		ON TB_Vendeu
 			FOR EACH ROW
 				EXECUTE PROCEDURE transacao_minima();
-	
-	
+				
+
 -- Checa tipo do documento: SSN vs PP
 DROP FUNCTION tipo_documento() CASCADE;
 CREATE FUNCTION tipo_documento()
@@ -59,6 +59,56 @@ CREATE TRIGGER checa_transacao_minima
 	BEFORE INSERT OR UPDATE
 		ON TB_Pessoa
 			FOR EACH ROW
-				EXECUTE PROCEDURE tipo_documento();			
+				EXECUTE PROCEDURE tipo_documento();		
+
+
+-- Checa se a quantidade de ganhadores de uma partida corresponde ao tipo de jogo
+DROP FUNCTION checa_ganhadores() CASCADE;
+CREATE FUNCTION checa_ganhadores()
+	RETURNS trigger AS
+		$BODY$
+			DECLARE
+				aux_ganhadores_qtd integer;
+				aux_competidores_qtd integer;
+				aux_jogadores_min_qtd integer;
+				aux_jogadores_max_qtd integer;
+				aux_equipes_qtd integer;
+			BEGIN
+				SELECT COUNT(*) INTO aux_ganhadores_qtd
+				FROM TB_Ganhou GAN
+				WHERE GAN.ID_PAR = NEW.ID_PAR;
+			
+				SELECT COUNT(*) INTO aux_competidores_qtd
+				FROM TP_Competiu CPU
+				WHERE CPU.ID_PAR = NEW.ID_PAR;
 				
+				IF aux_ganhadores_qtd > aux_competidores_qtd THEN
+					RAISE EXCEPTION 'Transação não efetuada'
+					      USING HINT = 'Numero de ganhadores maior do que de participantes.';		
+				END IF;
+				
+				SELECT 	JGG.jogadores_min INTO aux_jogadores_min_qtd ,
+					JGG.jogadores_max INTO aux_jogadores_max_qtd ,
+					JGG.equipes INTO aux_equipes_qtd
+				FROM 	TB_JogoEmGrupo JGG , TB_Mesa MES , TP_Partida PAR
+				WHERE 	PAR.ID = NEW.ID_PAR
+				AND 	MES.numero = PAR.numero_MES
+				AND	JGG.nome_JGO = MES.nome_JGG;
+				
+				IF aux_equipes_qtd > 0 THEN
+					IF aux_ganhadores_qtd > ( aux_competidores_qtd / aux_equipes_qtd ) THEN
+						RAISE EXCEPTION 'Transação não efetuada'
+						      USING HINT = 'Numero de ganhadores na equipe muito alto.';		
+					END IF;
+				END IF;
+				
+				RETURN NEW;
+			END;
+		$BODY$
+	LANGUAGE plpgsql;
 	
+CREATE TRIGGER checa_transacao_minima
+	BEFORE INSERT OR UPDATE
+		ON TB_Ganhou
+			FOR EACH ROW
+				EXECUTE PROCEDURE checa_ganhadores();	
