@@ -1,4 +1,5 @@
 <?php
+    $BDSchema = 'db1teste.';
   class BancodeDados{
     private static $bdEnd = '127.0.0.1'; // Host
     private static $bdUsr = 'postgres'; // Usuário
