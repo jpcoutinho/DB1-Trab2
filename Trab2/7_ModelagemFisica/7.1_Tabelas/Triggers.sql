@@ -87,9 +87,8 @@ CREATE FUNCTION checa_ganhadores()
 					      USING HINT = 'Numero de ganhadores maior do que de participantes.';		
 				END IF;
 				
-				SELECT 	JGG.jogadores_min INTO aux_jogadores_min_qtd ,
-					JGG.jogadores_max INTO aux_jogadores_max_qtd ,
-					JGG.equipes INTO aux_equipes_qtd
+				SELECT 	JGG.jogadores_min , JGG.jogadores_max , JGG.equipes
+				INTO 	aux_jogadores_min_qtd , aux_jogadores_max_qtd , aux_equipes_qtd
 				FROM 	TB_JogoEmGrupo JGG , TB_Mesa MES , TP_Partida PAR
 				WHERE 	PAR.ID = NEW.ID_PAR
 				AND 	MES.numero = PAR.numero_MES
