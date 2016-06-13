@@ -1,6 +1,6 @@
 <?php
-  require_once("resources/library/tbcodes.php");
-  $strfilename = 'cbeb4c01b2c581b42decd055eec9076f';
+  require_once('resources/library/tbcodes.php');
+  $strfile = $_GET['ntb'];
   $tabela = $BDSchema .''. ConvertCodes($_GET['ntb']);
 ?>
 <!doctype html>
@@ -37,7 +37,7 @@
               <div class="row">
                 <div class="medium-12 columns">
                   <?php
-                  include_once('resources/pages/inserir/'. $strfilename .'.php');
+                  require_once('resources/pages/'. $strfile .'.php');
                   ?>
                 </div>
               </div>

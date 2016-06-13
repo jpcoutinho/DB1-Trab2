@@ -1,8 +1,3 @@
-<?php
-  require_once("resources/config.php");
-  $pdo = BancodeDados::conecta();
-  $sql = 'SELECT * FROM '. $BDSchema .'.TB_Caixa CAX JOIN'. $BDSchema .'.TB_Franquia FRA ON CAX.tin_FRA=FRA.tin';
-?>
 <form data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> There are some errors in your form.</p>
@@ -18,15 +13,22 @@
       <p class="help-text" id="exampleHelpText">Por favor digite o numero do caixa!</p>
     </div>
     <div class="medium-6 columns">
-      <label>European Cars, Choose One, it can't be the blank option.
+      <label>Selecione em qual franquia o Caixa está localizado
         <select id="select" required>
-          <option value=""></option>
+          <option value="">--SELECIONE O NOME--</option>
           <?php
-          foreach ($pdo->query($sql) as $row) {
-            echo '<option value="'. $row['tin'] .'">'. $row['nome'] .'</option>';
-          }
-          ?>
+                   require_once('resources/config.php');
+                   $pdo = BancodeDados::conecta();
+                   $sql = 'SELECT * FROM '. $BDSchema .'TB_Franquia ORDER BY nome ASC';
+                   foreach ($pdo->query($sql) as $row) {
+                     echo '<option value="'. $row['tin'] . '">'. $row['nome'] . '</option>';
+                   }
+                   BancodeDados::desconecta();
+                  ?>
         </select>
+        <span class="form-error">
+          Yo, you had better fill this out, it's required.
+        </span>
       </label>
     </div>
   </div>
@@ -39,6 +41,3 @@
     </fieldset>
   </div>
 </form>
-<?php
-  $pdo = BancodeDados::desconecta();
-?>
