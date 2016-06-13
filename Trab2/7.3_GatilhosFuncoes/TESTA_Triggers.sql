@@ -22,8 +22,7 @@ INSERT INTO TB_Pessoa VALUES ('123456789' , 'Pessoa Teste 2' , 'PP' , 'M' , '197
 
 
 -- Testa integridade de uma partida
--- Preparativos
--- Partida 1
+-- OK, quantidade de competidores dentro do limite maximo do poker
 DO $$
 DECLARE 
 	t_id TB_Partida.ID%TYPE;
@@ -41,8 +40,26 @@ BEGIN
 	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 0 );
 	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
 	INSERT INTO TB_Competiu VALUES ( t_id , '90000002' , 10000 , 0 );
-	
-	-- Deve produzir um erro agora, pois partida de poker deve ter no max 10 jogadores
+END$$;
+
+-- ERRO, quantidade de competidores ACIMA do limite maximo do poker
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91008 , TO_DATE('19610121','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000002' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000003' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000004' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000005' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000007' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000002' , 10000 , 0 );
 	INSERT INTO TB_Competiu VALUES ( t_id , '90000004' , 10000 , 0 );
 END$$;
 
