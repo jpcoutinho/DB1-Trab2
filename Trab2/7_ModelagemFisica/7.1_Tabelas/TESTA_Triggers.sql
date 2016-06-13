@@ -7,3 +7,15 @@ INSERT INTO TB_Vendeu VALUES( 3000 , 100000000 , 80000 , TO_DATE('19610120','YYY
 -- ERROR
 INSERT INTO TB_Comprou VALUES( 3000 , 100000000 , 10000 , TO_DATE('19610120','YYYYMMDD') );
 INSERT INTO TB_Vendeu VALUES( 3000 , 100000000 , 20000 , TO_DATE('19610120','YYYYMMDD') );
+
+
+-- Testa comprimento do documento
+-- OK
+INSERT INTO TB_Pessoa VALUES ('123456789' , 'Pessoa Teste 1' , 'RG' , 'M' , '19720421' );
+INSERT INTO TB_Pessoa VALUES ('12345678' , 'Pessoa Teste 2' , 'PP' , 'M' , '19720421' );
+-- ERROR MENOR
+INSERT INTO TB_Pessoa VALUES ('12345678' , 'Pessoa Teste 1' , 'RG' , 'M' , '19720421' );
+INSERT INTO TB_Pessoa VALUES ('1234567' , 'Pessoa Teste 2' , 'PP' , 'M' , '19720421' );
+-- ERROR MAIOR
+INSERT INTO TB_Pessoa VALUES ('1234567890' , 'Pessoa Teste 1' , 'RG' , 'M' , '19720421' );
+INSERT INTO TB_Pessoa VALUES ('123456789' , 'Pessoa Teste 2' , 'PP' , 'M' , '19720421' );
