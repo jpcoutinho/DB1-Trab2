@@ -95,7 +95,7 @@ CREATE TRIGGER checa_competidores_qtdMax
 	BEFORE INSERT OR UPDATE
 		ON TB_Competiu
 			FOR EACH ROW
-				EXECUTE PROCEDURE checa_competidores_qtd;	
+				EXECUTE PROCEDURE checa_competidores_qtd();	
 
 
 
