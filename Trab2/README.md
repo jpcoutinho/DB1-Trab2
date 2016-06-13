@@ -16,7 +16,7 @@
 
 ### 8 Carga e verificação
 #### 8.1 Carga de Dados
-- [ ] INSERT's para carga de dados
+- [x] INSERT's para carga de dados
 
 #### 8.2 Verificação
 - [ ] INSERT's
