@@ -23,12 +23,12 @@
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="row">
                 <div class="medium-12 columns callout MarginTop">
-                  <nav aria-label="You are here:" role="navigation">
+                  <nav aria-label="Você está aqui:" role="navigation">
                     <ul class="breadcrumbs">
                       <li><a href="index.php">Home</a></li>
                       <li class="disabled">Visualização de tabela</li>
                       <li>
-                        <span class="show-for-sr">Current: </span> Inserir entrada
+                        <span class="show-for-sr">Atual: </span> Inserir entrada
                       </li>
                     </ul>
                   </nav>

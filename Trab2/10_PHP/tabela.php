@@ -25,11 +25,11 @@
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="row">
                 <div class="medium-12 columns callout MarginTop">
-                  <nav aria-label="You are here:" role="navigation">
+                  <nav aria-label="Você está aqui:" role="navigation">
                     <ul class="breadcrumbs">
                       <li><a href="index.php">Home</a></li>
                       <li>
-                        <span class="show-for-sr">Current: </span> Visualização de tabela
+                        <span class="show-for-sr">Atual: </span> Visualização de tabela
                       </li>
                     </ul>
                   </nav>
@@ -38,7 +38,7 @@
               <div class="row">
                 <div class="medium-12 columns">
                   <?php
-                  echo '<a class="expanded success button" href="inserir.php?ntb='.$_GET['ntb'].'">Inserir</a>';
+                  echo '<a class="expanded success button" href="page.php?ntb='.$_GET['ntb'].'">Inserir</a>';
                   ?>
                 </div>
               </div>
