@@ -71,12 +71,12 @@ CREATE FUNCTION checa_competidores_qtd()
 				aux_jogadores_max_qtd integer;
 			BEGIN
 				SELECT COUNT(*) INTO aux_competidores_qtd
-				FROM TP_Competiu CPU
+				FROM TB_Competiu CPU
 				WHERE CPU.ID_PAR = NEW.ID_PAR;
 				
 				SELECT 	JGG.jogadores_max
 				INTO 	aux_jogadores_max_qtd
-				FROM 	TB_JogoEmGrupo JGG , TB_Mesa MES , TP_Partida PAR
+				FROM 	TB_JogoEmGrupo JGG , TB_Mesa MES , TB_Partida PAR
 				WHERE 	PAR.ID = NEW.ID_PAR
 				AND 	MES.numero = PAR.numero_MES
 				AND	JGG.nome_JGO = MES.nome_JGG;
@@ -115,7 +115,7 @@ CREATE FUNCTION checa_ganhadores()
 				WHERE GAN.ID_PAR = NEW.ID_PAR;
 			
 				SELECT COUNT(*) INTO aux_competidores_qtd
-				FROM TP_Competiu CPU
+				FROM TB_Competiu CPU
 				WHERE CPU.ID_PAR = NEW.ID_PAR;
 				
 				IF aux_ganhadores_qtd > aux_competidores_qtd THEN
@@ -125,7 +125,7 @@ CREATE FUNCTION checa_ganhadores()
 				
 				SELECT 	JGG.equipes
 				INTO 	aux_equipes_qtd
-				FROM 	TB_JogoEmGrupo JGG , TB_Mesa MES , TP_Partida PAR
+				FROM 	TB_JogoEmGrupo JGG , TB_Mesa MES , TB_Partida PAR
 				WHERE 	PAR.ID = NEW.ID_PAR
 				AND 	MES.numero = PAR.numero_MES
 				AND	JGG.nome_JGO = MES.nome_JGG;
