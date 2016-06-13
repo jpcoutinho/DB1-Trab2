@@ -41,6 +41,9 @@ BEGIN
 	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 0 );
 	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
 	INSERT INTO TB_Competiu VALUES ( t_id , '90000002' , 10000 , 0 );
+	
+	-- Deve produzir um erro agora, pois partida de poker deve ter no max 10 jogadores
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000004' , 10000 , 0 );
 END$$;
 
 
