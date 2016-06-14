@@ -1,6 +1,7 @@
 <?php
   require_once('resources/library/tbcodes.php');
   $strfile = $_GET['ntb'];
+  $optipo = $_GET['tb'];
   $tabela = $BDSchema .''. ConvertCodes($_GET['ntb']);
 ?>
 <!doctype html>
@@ -28,7 +29,23 @@
                       <li><a href="index.php">Home</a></li>
                       <li class="disabled">Visualização de tabela</li>
                       <li>
-                        <span class="show-for-sr">Atual: </span> Inserir entrada
+                        <?php
+                        if($optipo==1){
+                          echo '<span class="show-for-sr">Atual: </span> Inserir entrada';
+                        }
+                        elseif ($optipo==2) {
+                          echo '<span class="show-for-sr">Atual: </span> Visualizar entrada';
+                        }
+                        elseif ($optipo==3) {
+                          echo '<span class="show-for-sr">Atual: </span> Atualizar entrada';
+                        }
+                        elseif ($optipo==4) {
+                          echo '<span class="show-for-sr">Atual: </span> Deletar entrada';
+                        }
+                        else{
+                          echo '<span class="show-for-sr">Atual: </span> OPERAÇÃO NÃO PERMITIDA!!';
+                        }
+                        ?>
                       </li>
                     </ul>
                   </nav>
@@ -37,7 +54,21 @@
               <div class="row">
                 <div class="medium-12 columns">
                   <?php
-                  require_once('resources/pages/'. $strfile .'.php');
+                  if($optipo==1){
+                    require_once('resources/pages/inserir/'. $strfile .'.php');
+                  }
+                  elseif ($optipo==2) {
+                    require_once('resources/pages/ler/'. $strfile .'.php');
+                  }
+                  elseif ($optipo==3) {
+                    require_once('resources/pages/atualizar/'. $strfile .'.php');
+                  }
+                  elseif ($optipo==4) {
+                    require_once('resources/pages/deletar/'. $strfile .'.php');
+                  }
+                  else{
+                    echo "<h1>OPERAÇÃO NÃO PERMITIDA!!</h1>";
+                  }
                   ?>
                 </div>
               </div>

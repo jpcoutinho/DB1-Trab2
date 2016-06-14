@@ -9,25 +9,16 @@ if ( !empty($_POST)) {
         $sql = 'INSERT INTO '. $BDSchema .'TB_Caixa (numero,tin_FRA) VALUES(?, ?)';
         $q = $pdo->prepare($sql);
         $q->execute(array($numro,$tin));
-        header("Location: tabela.php?ntb=cbeb4c01b2c581b42decd055eec9076f&tbo=numero");
+        header("Location: tabela.php?ntb=36b5b40331e8df3f92b5ccf8685afbf5&tbo=numero");
       }
 ?>
-<form action="page.php?ntb=cbeb4c01b2c581b42decd055eec9076f" method="post" data-abide novalidate>
+<form action="page.php?ntb=36b5b40331e8df3f92b5ccf8685afbf5&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> There are some errors in your form.</p>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>Número do caixa
-        <input type="text" name="vNUMERO" placeholder="1234" aria-describedby="Digite o numero da caixa" required pattern="number">
-        <span class="form-error">
-          Yo, you had better fill this out, it's required.
-        </span>
-      </label>
-      <p class="help-text" id="exampleHelpText">Por favor digite o numero do caixa!</p>
-    </div>
-    <div class="medium-6 columns">
-      <label>Selecione em qual franquia o Caixa está localizado
+      <label>Selecione o nome do cliente.
         <select id="select" name="vTIN" required>
           <option value="">--SELECIONE O NOME--</option>
           <?php
@@ -39,17 +30,23 @@ if ( !empty($_POST)) {
                   ?>
         </select>
         <span class="form-error">
-          Yo, you had better fill this out, it's required.
+          Koé, você não pode deixar isso em branco!
         </span>
       </label>
+      <div class="medium-6 columns">
+        <label>Pseudominio.
+          <input type="text" name="vPSEUDOMINIO" placeholder="Don Corleone" aria-describedby="Digite o pseudominio" maxlength="20" pattern="text">
+        </label>
+        <p class="help-text" id="exampleHelpText">Caso deseje permanecer anônimo, por favor preencha este campo!</p>
+      </div>
     </div>
   </div>
   <div class="row">
     <fieldset class="large-6 columns">
-      <button class="button" type="submit" value="Submit">Submit</button>
+      <button class="alert button" type="reset" value="Reset">Apagar</button>
     </fieldset>
     <fieldset class="large-6 columns">
-      <button class="button" type="reset" value="Reset">Reset</button>
+      <button class="success button" type="submit" value="Submit">Enviar</button>
     </fieldset>
   </div>
 </form>

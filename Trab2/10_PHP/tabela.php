@@ -38,7 +38,7 @@
               <div class="row">
                 <div class="medium-12 columns">
                   <?php
-                  echo '<a class="expanded success button" href="page.php?ntb='.$_GET['ntb'].'">Inserir</a>';
+                  echo '<a class="expanded success button" href="page.php?ntb='.$_GET['ntb'].'&tb=1">Inserir</a>';
                   ?>
                 </div>
               </div>
