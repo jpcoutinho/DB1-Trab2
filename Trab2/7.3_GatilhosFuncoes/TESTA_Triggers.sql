@@ -88,7 +88,7 @@ DO $$
 DECLARE 
 	t_id TB_Partida.ID%TYPE;
 BEGIN
-	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91010 , TO_DATE('19610120','YYYYMMDD') )
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91010 , TO_DATE('19610121','YYYYMMDD') )
 	  RETURNING TB_Partida.ID INTO t_id;
 	  
 	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
