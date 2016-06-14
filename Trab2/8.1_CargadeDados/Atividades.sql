@@ -345,3 +345,122 @@ BEGIN
 	
 	INSERT INTO TB_Ganhou VALUES ( t_id , '100000004' );
 END$$;
+
+-- Wheel of Fortune
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000009' , 91004 , TO_DATE('20021101','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000002' , 10000 , 70000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000003' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000004' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000005' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000003' );
+END$$;
+
+-- Buraco
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91010 , TO_DATE('20021102','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000007' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 0 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000000' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000008' );	
+END$$;
+
+-- Truco
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91012 , TO_DATE('20021102','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000007' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000003' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000002' , 10000 , 0 );	
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 20000 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000000' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000008' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000006' );		
+END$$;
+
+-- Canasta 
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91014 , TO_DATE('20021104','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000007' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000003' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000002' , 10000 , 0 );	
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 20000 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000000' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000008' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000006' );		
+END$$;
+
+-- Sueca 
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000009' , 91016 , TO_DATE('20021104','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000007' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000003' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 20000 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000000' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000006' );		
+END$$;
+
+-- Cerco 
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000009' , 91019 , TO_DATE('20021103','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000002' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000003' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000004' , 10000 , 40000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000005' , 10000 , 40000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 40000 );	
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000007' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000008' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000002' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000004' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000005' , 10000 , 0 );	
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000004' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000005' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000006' );	
+END$$;
