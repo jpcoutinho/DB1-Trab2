@@ -249,3 +249,53 @@ BEGIN
 	
 	INSERT INTO TB_Ganhou VALUES ( t_id , '100000007' );
 END$$;
+
+-- Roulette 01
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 90000  , TO_DATE('20010601','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000005' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000007' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000005' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000002' , 10000 , 0 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000005' );
+END$$;
+
+-- Roulette 02
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91007 , TO_DATE('20010602','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000005' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000006' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000005' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000006' );
+END$$;
+
+-- Roulette 03
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 92007 , TO_DATE('20010603','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000005' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000005' );
+END$$;
+
+
