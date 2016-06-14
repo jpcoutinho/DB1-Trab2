@@ -40,7 +40,7 @@ if ( !empty($_POST)) {
         <select id="select" name="vDOC" required>
           <option value="">--SELECIONE O NOME--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY nome ASC';
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Pessoa ORDER BY nome ASC';
             foreach ($pdo->query($sql) as $row) {
               echo '<option value="'. $row['doc'] . '">'. $row['nome'] . '</option>';
             }
@@ -58,10 +58,10 @@ if ( !empty($_POST)) {
         <div class="input-group">
           <span class="input-group-label">$</span>
           <input class="input-group-field" name="vAPOSTOU" required type="number">
+          <span class="form-error">
+            Koé, você não pode deixar isso em branco!
+          </span>
         </div>
-        <span class="form-error">
-          Koé, você não pode deixar isso em branco!
-        </span>
       </label>
       <p class="help-text" id="exampleHelpText">Digite o valor que foi apostado.</p>
     </div>
@@ -70,10 +70,10 @@ if ( !empty($_POST)) {
         <div class="input-group">
           <span class="input-group-label">$</span>
           <input class="input-group-field" name="vGANHOU" required type="number">
+          <span class="form-error">
+            Koé, você não pode deixar isso em branco!
+          </span>
         </div>
-        <span class="form-error">
-          Koé, você não pode deixar isso em branco!
-        </span>
       </label>
       <p class="help-text" id="exampleHelpText">Digite o valor que foi ganho.</p>
     </div>
