@@ -21,7 +21,7 @@ INSERT INTO TB_Pessoa VALUES ('1234567890' , 'Pessoa Teste 1' , 'RG' , 'M' , '19
 INSERT INTO TB_Pessoa VALUES ('123456789' , 'Pessoa Teste 2' , 'PP' , 'M' , '19720421' );
 
 
--- Testa integridade de uma partida
+-- Testa quantidade de competidores ( partida de poker )
 -- OK, quantidade de competidores dentro do limite maximo do poker
 DO $$
 DECLARE 
@@ -64,4 +64,40 @@ BEGIN
 END$$;
 
 
+
+-- Testa quantidade de ganhadores ( partida de buraco )
+-- OK, quantidade de ganhadores dentro do limite maximo do buraco ( 2 )
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91010 , TO_DATE('19610120','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000002' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000002' , 10000 , 0 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '90000001' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '90000002' );
+END$$;
+
+-- ERRO, quantidade de ganhadores ACIMA do limite maximo do buraco
+DO $$
+DECLARE 
+	t_id TB_Partida.ID%TYPE;
+BEGIN
+	INSERT INTO TB_Partida( doc_FUC , numero_MES , data ) VALUES ('100000001' , 91010 , TO_DATE('19610120','YYYYMMDD') )
+	  RETURNING TB_Partida.ID INTO t_id;
+	  
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000000' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '100000002' , 10000 , 20000 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000001' , 10000 , 0 );
+	INSERT INTO TB_Competiu VALUES ( t_id , '90000002' , 10000 , 0 );
+	
+	INSERT INTO TB_Ganhou VALUES ( t_id , '90000001' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '90000002' );
+	INSERT INTO TB_Ganhou VALUES ( t_id , '100000002' );
+END$$;
 
