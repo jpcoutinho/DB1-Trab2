@@ -473,100 +473,100 @@ END$$;
 
 -- Slot 01
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 10000 , 0 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 10000 , 0 );
 
 -- Slot 02
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 10000 , 0 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 10000 , 0 );
 
 -- Slot 03
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021003','YYYYMMDD') , 10000 , 0 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021003','YYYYMMDD') , 10000 , 0 );
 
 -- Slot 04
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 10000 , 0 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 10000 , 0 );
 
 -- Slot 05
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021005','YYYYMMDD') , 10000 , 0 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021005','YYYYMMDD') , 10000 , 0 );
 
 -- Slot 06
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021006','YYYYMMDD') , 10000 , 0 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021006','YYYYMMDD') , 10000 , 0 );
 
 -- Slot 07
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021007','YYYYMMDD') , 10000 , 0 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021007','YYYYMMDD') , 10000 , 0 );
 
 -- Slot 08
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 90000 , 80000 )
+VALUES ('100000000' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 90000 , 80000 );
 
 -- Slot 09
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000002' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 15000 , 1000 )
+VALUES ('100000002' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 15000 , 1000 );
 
 -- Slot 10
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000004' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 14000 , 5000 )
+VALUES ('100000004' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 14000 , 5000 );
 
 -- Slot 11
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000006' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 17000 , 3000 )
+VALUES ('100000006' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 17000 , 3000 );
 
 -- Slot 12
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000007' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 19000 , 50000 )
+VALUES ('100000007' , 2000  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 19000 , 50000 );
 
 -- Slot 13
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000008' , 2000 , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 19000 , 20000 )
+VALUES ('100000008' , 2000 , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 19000 , 20000 );
 
 -- Slot 14
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000002' , 2001 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 11000 , 100 )
+VALUES ('100000002' , 2001 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 11000 , 100 );
 
 -- Slot 15
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000003' , 2002 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 19000 , 13300 )
+VALUES ('100000003' , 2002 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 19000 , 13300 );
 
 -- Slot 16
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000004' , 2002 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 30000 , 7000 )
+VALUES ('100000004' , 2002 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 30000 , 7000 );
 
 -- Slot 17
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000004' , 2003 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 30000 , 7000 )
+VALUES ('100000004' , 2003 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 30000 , 7000 );
 
 -- Slot 18
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000007' , 2004 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 10000 , 30000 )
+VALUES ('100000007' , 2004 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 10000 , 30000 );
 
 -- Slot 19
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000008' , 2005 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 30000 , 10000 )
+VALUES ('100000008' , 2005 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 30000 , 10000 );
 
 -- Slot 20
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000006' , 2006 , 'Slot' , TO_DATE('20021003','YYYYMMDD') , 60000 , 10000 )
+VALUES ('100000006' , 2006 , 'Slot' , TO_DATE('20021003','YYYYMMDD') , 60000 , 10000 );
 
 -- Slot 21
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000005' , 2007 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 60000 , 10000 )
+VALUES ('100000005' , 2007 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 60000 , 10000 );
 
 -- Slot 22
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000004' , 2007 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 10000 , 10000 )
+VALUES ('100000004' , 2007 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 10000 , 10000 );
 
 -- Slot 23
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000003' , 2008 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 30000 , 90000 )
+VALUES ('100000003' , 2008 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 30000 , 90000 );
 
 -- Slot 24
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000003' , 2009 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 30000 , 90000 )
+VALUES ('100000003' , 2009 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 30000 , 90000 );
 
 -- Slot 23
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000003' , 2010 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 30000 , 20000 )
+VALUES ('100000003' , 2010 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 30000 , 20000 );
