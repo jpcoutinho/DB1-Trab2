@@ -14,11 +14,11 @@ if ( !empty($_POST)) {
 ?>
 <form action="page.php?ntb=cbeb4c01b2c581b42decd055eec9076f&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
-    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+    <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>Número do caixa
+      <label>*Número do caixa
         <input type="text" name="vNUMERO" placeholder="1234" aria-describedby="Digite o numero da caixa" required pattern="number">
         <span class="form-error">
           Koé, você não pode deixar isso em branco!
@@ -27,7 +27,7 @@ if ( !empty($_POST)) {
       <p class="help-text" id="exampleHelpText">Por favor digite o numero do caixa!</p>
     </div>
     <div class="medium-6 columns">
-      <label>Selecione em qual franquia o Caixa está localizado
+      <label>*Selecione em qual franquia o Caixa está localizado
         <select id="select" name="vTIN" required>
           <option value="">--SELECIONE O NOME--</option>
           <?php
