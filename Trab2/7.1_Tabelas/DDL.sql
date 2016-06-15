@@ -1,22 +1,40 @@
 CREATE SCHEMA trab2teste;
 SET SCHEMA 'trab2teste';
 
-CREATE TABLE TB_Caixa (
-	numero INT PRIMARY KEY,
-	tin_FRA VARCHAR(10) NOT NULL
+CREATE TABLE TB_Franquia (
+	tin VARCHAR(10) PRIMARY KEY,
+	nome VARCHAR(40) UNIQUE NOT NULL,
+	endereco VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE TB_ContatoFranquia (
+	tin_FRA VARCHAR(10),
+	contato VARCHAR(14),
+	PRIMARY KEY (tin_FRA,contato)
+);
+
+CREATE TABLE TB_Pessoa (
+	doc VARCHAR(9) PRIMARY KEY,
+	nome VARCHAR(40) NOT NULL UNIQUE,
+	tipoDoc CHAR(2) NOT NULL,
+	sexo CHAR(1) NOT NULL,
+	nascimento DATE NOT NULL --Mudei idade para nascimento
+);
+
+CREATE TABLE TB_ContatoPessoa (
+	doc_PES VARCHAR(9),
+	contato VARCHAR(14),
+	PRIMARY KEY (doc_PES,contato)
+);
+
+CREATE TABLE TB_Funcionario (
+	doc_PES VARCHAR(9) PRIMARY KEY,
+	ri SERIAL UNIQUE NOT NULL
 );
 
 CREATE TABLE TB_Cliente (
 	doc_PES VARCHAR(9) PRIMARY KEY,
 	pseudominio VARCHAR(20) UNIQUE NULL
-);
-
-CREATE TABLE TB_Competiu (
-	ID_PAR INT,
-	doc_CLI VARCHAR(9),
-	apostou NUMERIC NOT NULL,
-	ganhou NUMERIC NOT NULL,
-	PRIMARY KEY (ID_PAR,doc_CLI)
 );
 
 CREATE TABLE TB_Comprou (
@@ -27,22 +45,12 @@ CREATE TABLE TB_Comprou (
 	PRIMARY KEY (numero_CAX,doc_CLI,data)
 );
 
-CREATE TABLE TB_ContatoFranquia (
-	tin_FRA VARCHAR(10),
-	contato VARCHAR(14),
-	PRIMARY KEY (tin_FRA,contato)
-);
-
-CREATE TABLE TB_ContatoPessoa (
-	doc_PES VARCHAR(9),
-	contato VARCHAR(14),
-	PRIMARY KEY (doc_PES,contato)
-);
-
-CREATE TABLE TB_Franquia (
-	tin VARCHAR(10) PRIMARY KEY,
-	nome VARCHAR(40) UNIQUE NOT NULL,
-	endereco VARCHAR(100) NOT NULL
+CREATE TABLE TB_Vendeu (
+	numero_CAX INT,
+	doc_CLI VARCHAR(9),
+	valor NUMERIC,
+	data TIMESTAMP NOT NULL,
+	PRIMARY KEY (numero_CAX,doc_CLI,data)
 );
 
 CREATE TABLE TB_Frequentou (
@@ -52,25 +60,9 @@ CREATE TABLE TB_Frequentou (
 	PRIMARY KEY (doc_CLI,tin_FRA,data)
 );
 
-CREATE TABLE TB_Funcionario (
-	doc_PES VARCHAR(9) PRIMARY KEY,
-	ri SERIAL UNIQUE NOT NULL
-);
-
-CREATE TABLE TB_Ganhou (
-	ID_PAR INT,
-	doc_CLI VARCHAR(9),
-	PRIMARY KEY (ID_PAR,doc_CLI)
-);
-
-CREATE TABLE TB_Jogada (
-	doc_CLI VARCHAR(9),
-	snumber_MAQ INT,	-- Modificado serial->snumber ja que serial é um tipo do SQL
-	nome_JGO VARCHAR(30),
-	data TIMESTAMP,
-	apostou NUMERIC NOT NULL,
-	ganhou NUMERIC NOT NULL,
-	PRIMARY KEY (doc_CLI,snumber_MAQ,data)
+CREATE TABLE TB_Caixa (
+	numero INT PRIMARY KEY,
+	tin_FRA VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE TB_Jogo (
@@ -87,6 +79,16 @@ CREATE TABLE TB_JogoEmGrupo (
 
 CREATE TABLE TB_JogoIndividual (
 	nome_JGO VARCHAR(30) PRIMARY KEY
+);
+
+CREATE TABLE TB_Jogada (
+	doc_CLI VARCHAR(9),
+	snumber_MAQ INT,	-- Modificado serial->snumber ja que serial é um tipo do SQL
+	nome_JGO VARCHAR(30),
+	data TIMESTAMP,
+	apostou NUMERIC NOT NULL,
+	ganhou NUMERIC NOT NULL,
+	PRIMARY KEY (doc_CLI,snumber_MAQ,data)
 );
 
 CREATE TABLE TB_Maquina (
@@ -113,20 +115,18 @@ CREATE TABLE TB_Partida (
 	data TIMESTAMP
 );
 
-CREATE TABLE TB_Pessoa (
-	doc VARCHAR(9) PRIMARY KEY,
-	nome VARCHAR(40) NOT NULL UNIQUE,
-	tipoDoc CHAR(2) NOT NULL,
-	sexo CHAR(1) NOT NULL,
-	nascimento DATE NOT NULL --Mudei idade para nascimento
+CREATE TABLE TB_Competiu (
+	ID_PAR INT,
+	doc_CLI VARCHAR(9),
+	apostou NUMERIC NOT NULL,
+	ganhou NUMERIC NOT NULL,
+	PRIMARY KEY (ID_PAR,doc_CLI)
 );
 
-CREATE TABLE TB_Vendeu (
+CREATE TABLE TB_Ganhou (
+	ID_PAR INT,
 	doc_CLI VARCHAR(9),
-	numero_CAX INT,
-	valor NUMERIC,
-	data TIMESTAMP NOT NULL,
-	PRIMARY KEY (doc_CLI,numero_CAX,valor)
+	PRIMARY KEY (ID_PAR,doc_CLI)
 );
 
 -- COMENTÁRIOS
