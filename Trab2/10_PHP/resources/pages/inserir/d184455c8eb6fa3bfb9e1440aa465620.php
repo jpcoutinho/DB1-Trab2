@@ -14,6 +14,7 @@ if ( !empty($_POST)) {
         header("Location: tabela.php?ntb=d184455c8eb6fa3bfb9e1440aa465620=doc_CLI");
       }
 ?>
+<h1>Tabela comprou</h1>
 <form action="page.php?ntb=d184455c8eb6fa3bfb9e1440aa465620&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>

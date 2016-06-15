@@ -12,7 +12,7 @@ if ( !empty($_POST)) {
   header("Location: tabela.php?ntb=d9e35a12173a53725317fcabc563c48f&tbo=doc_CLI");
 }
 ?>
-<h1>Tabela contato franquia</h1>
+<h1>Tabela ganhou</h1>
 <form action="page.php?ntb=d9e35a12173a53725317fcabc563c48f&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
@@ -39,7 +39,7 @@ if ( !empty($_POST)) {
         <select id="select" name="vID" required>
           <option value="">--SELECIONE O NOME--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY nome ASC';
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Pessoa ORDER BY nome ASC';
             foreach ($pdo->query($sql) as $row) {
               echo '<option value="'. $row['doc'] . '">'. $row['nome'] . '</option>';
             }

@@ -13,6 +13,7 @@ if ( !empty($_POST)) {
         header("Location: tabela.php?ntb=607eb7714ecba6f640dd0c1fafb2f42c&tbo=tin");
       }
 ?>
+<h1>Tabela franquia</h1>
 <form action="page.php?ntb=607eb7714ecba6f640dd0c1fafb2f42c&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>

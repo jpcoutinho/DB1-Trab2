@@ -12,6 +12,7 @@ if ( !empty($_POST)) {
         header("Location: tabela.php?ntb=cbeb4c01b2c581b42decd055eec9076f&tbo=numero");
       }
 ?>
+<h1>Tabela caixa</h1>
 <form action="page.php?ntb=cbeb4c01b2c581b42decd055eec9076f&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
