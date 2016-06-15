@@ -663,7 +663,7 @@ VALUES ('100000006' , 2019 , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 450
 
 -- Maq Generica
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
-VALUES ('100000001' , 2020 , 'Keno' , TO_DATE('20021008','YYYYMMDD') , 23000 , 30000 );
+VALUES ('100000003' , 2020 , 'Keno' , TO_DATE('20021008','YYYYMMDD') , 23000 , 30000 );
 
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
 VALUES ('100000007' , 2020 , 'Pai Gow Poker' , TO_DATE('20021005','YYYYMMDD') , 37000 , 50000 );
