@@ -37,7 +37,7 @@ CREATE FUNCTION jogoEmGrupo_Min_Max()
 		$BODY$
 			DECLARE
 			BEGIN
-				IF NEW.jogadores_min > EW.jogadores_max THEN
+				IF NEW.jogadores_min > NEW.jogadores_max THEN
 				RAISE EXCEPTION 'Transação não efetuada'
 				      USING HINT = 'Qtd minima de jogadores não pode ser superior a máxima';
 				END IF;
