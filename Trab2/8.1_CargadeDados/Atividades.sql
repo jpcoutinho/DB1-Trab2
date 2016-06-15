@@ -671,3 +671,42 @@ VALUES ('100000007' , 2020 , 'Pai Gow Poker' , TO_DATE('20021005','YYYYMMDD') , 
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
 VALUES ('100000003' , 2020 , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 25000 , 20000 );
 
+-- Slot P2 01
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000004' , 2100  , 'Slot' , TO_DATE('20021008','YYYYMMDD') , 14000 , 5000 );
+
+-- Slot P2 02
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000006' , 2101  , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 27000 , 3000 );
+
+-- Slot P2 03
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000007' , 2102  , 'Slot' , TO_DATE('20021003','YYYYMMDD') , 19000 , 10000 );
+
+-- Slot P2 04
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000008' , 2103 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 49000 , 20000 );
+
+-- Slot P2 05
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000002' , 2104 , 'Slot' , TO_DATE('20021001','YYYYMMDD') , 31000 , 1100 );
+
+-- Black Jack P2 01
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000006' , 2105  , 'Black Jack' , TO_DATE('20021006','YYYYMMDD') , 14000 , 41000 );
+
+-- Black Jack P2 02
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000007' , 2105  , 'Black Jack' , TO_DATE('20021002','YYYYMMDD') , 14000 , 71000 );
+
+-- Black Jack P2 03
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000002' , 2105  , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 41000 , 4000 );
+
+-- Black Jack P2 04
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000003' , 2105  , 'Black Jack' , TO_DATE('20021008','YYYYMMDD') , 62000 , 71000 );
+
+-- Black Jack P2 05
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000008' , 2105  , 'Black Jack' , TO_DATE('20021008','YYYYMMDD') , 12000 , 5000 );
