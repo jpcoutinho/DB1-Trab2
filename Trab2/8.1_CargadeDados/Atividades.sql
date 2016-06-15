@@ -224,6 +224,9 @@ INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3001 , 
 INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3010 , '90000004' , 4182000 , TO_DATE('20010513' , 'YYYYMMDD') );
 INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3010 , '90000005' , 6273000 , TO_DATE('20010513' , 'YYYYMMDD') );
 
+INSERT INTO TB_Vendeu ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3004 , '100000004' , 10000000 , TO_DATE('20021008' , 'YYYYMMDD') );
+INSERT INTO TB_Vendeu ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3007 , '100000005' , 4581000 , TO_DATE('20021103' , 'YYYYMMDD') );
+
 
 -- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -- PARTIDAS
