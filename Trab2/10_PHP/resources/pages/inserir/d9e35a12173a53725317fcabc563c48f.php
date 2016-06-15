@@ -3,29 +3,29 @@ require_once('resources/config.php');
 $pdo = BancodeDados::conecta();
 
 if ( !empty($_POST)) {
-  $tin = $_POST['vTIN'];
-  $contato = $_POST['vCONTATO'];
+  $id = $_POST['vID'];
+  $doc = $_POST['vDOC'];
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sql = 'INSERT INTO '. $BDSchema .'TB_ContatoFranquia (tin_FRA,contato) VALUES(?, ?)';
+  $sql = 'INSERT INTO '. $BDSchema .'TB_Ganhou (id_PAR,doc_CLI) VALUES(?, ?)';
   $q = $pdo->prepare($sql);
-  $q->execute(array($tin,$contato));
-  header("Location: tabela.php?ntb=0a258ee607f3546bd8d9050ef6697142&tbo=tin_FRA");
+  $q->execute(array($id,$doc));
+  header("Location: tabela.php?ntb=d9e35a12173a53725317fcabc563c48f&tbo=doc_CLI");
 }
 ?>
 <h1>Tabela contato franquia</h1>
-<form action="page.php?ntb=0a258ee607f3546bd8d9050ef6697142&tb=1" method="post" data-abide novalidate>
+<form action="page.php?ntb=d9e35a12173a53725317fcabc563c48f&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Selecione a franquia
-        <select id="select" name="vTIN" required>
-          <option value="">--SELECIONE A FRANQUIA--</option>
+      <label>*Selecione a partida
+        <select id="select" name="vID" required>
+          <option value="">--SELECIONE O ID--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Franquia ORDER BY nome ASC';
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Partida ORDER BY ID ASC';
             foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['tin'] . '">'. $row['nome'] . '</option>';
+              echo '<option value="'. $row['ID'] . '">'. $row['ID'] . '</option>';
             }
           ?>
         </select>
@@ -35,13 +35,20 @@ if ( !empty($_POST)) {
       </label>
     </div>
     <div class="medium-6 columns">
-      <label>*Número de contato
-        <input type="text" name="vCONTATO" placeholder="12345678901234" aria-describedby="Digite o numero de contato" required pattern="text">
+      <label>*Selecione o cliente
+        <select id="select" name="vID" required>
+          <option value="">--SELECIONE O NOME--</option>
+          <?php
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY nome ASC';
+            foreach ($pdo->query($sql) as $row) {
+              echo '<option value="'. $row['doc'] . '">'. $row['nome'] . '</option>';
+            }
+          ?>
+        </select>
         <span class="form-error">
           Koé, você não pode deixar isso em branco!
         </span>
       </label>
-      <p class="help-text" id="exampleHelpText">Por favor digite o numero de contato!</p>
     </div>
   </div>
   <div class="row">

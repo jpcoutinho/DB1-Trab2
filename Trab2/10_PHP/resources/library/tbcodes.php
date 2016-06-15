@@ -14,6 +14,8 @@
       $t = "TB_ContatoPessoa";
     elseif($tbnome===strtolower("607EB7714ECBA6F640DD0C1FAFB2F42C"))
       $t = "TB_Franquia";
+    elseif($tbnome==strtolower("3ABCFCB700ACD4310C5C4D9375AD88CF"))
+      $t = "TB_Frequentou";
     elseif($tbnome===strtolower("DBE3D143277FE8475C2E3E88ECF021F5"))
       $t = "TB_Funcionario";
     elseif($tbnome===strtolower("D9E35A12173A53725317FCABC563C48F"))
