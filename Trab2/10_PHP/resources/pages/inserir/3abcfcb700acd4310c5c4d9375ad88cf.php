@@ -24,10 +24,14 @@ if ( !empty($_POST)) {
         <select id="select" name="vDOC" required>
           <option value="">--SELECIONE O CLIENTE--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Pessoa ORDER BY nome ASC';
-            foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['doc'] . '">'. $row['nome'] . '</option>';
+          $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY doc_pes ASC';
+          foreach ($pdo->query($sql) as $row) {
+            if(!empty($row['pseudominio']))
+              echo '<option value="'. $row['doc_pes'] .'">'. $row['pseudominio'] .'</option>';
+            else {
+              echo '<option value="'. $row['doc_pes'] .'">'. $row['doc_pes'] .'</option>';
             }
+          }
           ?>
         </select>
         <span class="form-error">

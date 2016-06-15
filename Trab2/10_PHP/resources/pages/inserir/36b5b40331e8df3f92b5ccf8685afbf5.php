@@ -19,7 +19,7 @@ if ( !empty($_POST)) {
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Selecione o nome do cliente.
+      <label>*Selecione a pessoa.
         <select id="select" name="vDOC" required>
           <option value="">--SELECIONE O NOME--</option>
           <?php

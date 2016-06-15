@@ -22,6 +22,8 @@
       $t = "TB_Ganhou";
     elseif($tbnome===strtolower("4BA5A8613A22338B62A8FC77DEEABF20"))
       $t = "TB_Jogada";
+    elseif($tbnome==='bceca77ab8c59eeaf2e6d6a323be0ae7')
+      $t = "TB_Jogo";
     elseif($tbnome===strtolower("BCECA77AB8C59EEAF2E6D6A323BE0AE7"))
       $t = "TB_JogoEmGrupo";
     elseif($tbnome===strtolower("0F46C1D95833F44BF262DBFD167EDD46"))

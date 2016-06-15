@@ -19,9 +19,9 @@ if ( !empty($_POST)) {
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Selecione o cliente
+      <label>*Selecione a pessoa
         <select id="select" name="vDOC" required>
-          <option value="">--SELECIONE O CLIENTE--</option>
+          <option value="">--SELECIONE O NOME--</option>
           <?php
             $sql = 'SELECT * FROM '. $BDSchema .'TB_Pessoa ORDER BY nome ASC';
             foreach ($pdo->query($sql) as $row) {

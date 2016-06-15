@@ -11,7 +11,7 @@ if ( !empty($_POST)) {
         $sql = 'INSERT INTO '. $BDSchema .'TB_Comprou (numero_CAX,doc_CLI,valor,data) VALUES(?, ?, ?, ?)';
         $q = $pdo->prepare($sql);
         $q->execute(array($numero,$doc,$comprou,$data));
-        header("Location: tabela.php?ntb=d184455c8eb6fa3bfb9e1440aa465620=doc_CLI");
+        header("Location: tabela.php?ntb=d184455c8eb6fa3bfb9e1440aa465620&tbo=doc_CLI");
       }
 ?>
 <h1>Tabela comprou</h1>
@@ -41,10 +41,14 @@ if ( !empty($_POST)) {
         <select id="select" name="vDOC" required>
           <option value="">--SELECIONE O DOCUMENTO--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY doc_PES ASC';
-            foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['doc_PES'] .'">'. $row['doc_PES'] .'</option>';
+          $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY doc_pes ASC';
+          foreach ($pdo->query($sql) as $row) {
+            if(!empty($row['pseudominio']))
+              echo '<option value="'. $row['doc_pes'] .'">'. $row['pseudominio'] .'</option>';
+            else {
+              echo '<option value="'. $row['doc_pes'] .'">'. $row['doc_pes'] .'</option>';
             }
+          }
           ?>
         </select>
         <span class="form-error">
@@ -67,8 +71,11 @@ if ( !empty($_POST)) {
       <p class="help-text" id="exampleHelpText">Digite o valor que foi apostado.</p>
     </div>
     <div class="medium-6 columns">
-      <label>Data da compra.
-        <input type="text" name="vDATA" placeholder="YYYYMMDD" aria-describedby="Digite a data" required pattern="date">
+      <label>Data e hora da compra.
+        <input type="text" name="vDATA" placeholder="1991-10-05 19:59:02" aria-describedby="Digite a data e hora" required pattern="text">
+        <span class="form-error">
+          Koé, você não pode deixar isso em branco!
+        </span>
       </label>
       <p class="help-text" id="exampleHelpText">Caso deseje permanecer anônimo, por favor preencha este campo!</p>
     </div>

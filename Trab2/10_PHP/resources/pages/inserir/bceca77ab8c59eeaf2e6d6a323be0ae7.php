@@ -3,63 +3,54 @@ require_once('resources/config.php');
 $pdo = BancodeDados::conecta();
 
 if ( !empty($_POST)) {
-        $id = $_POST['vID'];
-        $doc = $_POST['vDOC'];
-        $apostou = $_POST['vAPOSTOU'];
-        $ganhou = $_POST['vGANHOU'];
+        $nome = $_POST['vNOME'];
+        $duracao = $_POST['vDURACAO'];
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'INSERT INTO '. $BDSchema .'TB_Competiu (id_PAR,doc_CLI,apostou,ganhou) VALUES(?, ?, ?, ?)';
+        $sql = 'INSERT INTO '. $BDSchema .'TB_Jogo (nome,duracao) VALUES(?, ?)';
         $q = $pdo->prepare($sql);
-        $q->execute(array($id,$doc,$apostou,$ganhou));
-        header("Location: tabela.php?ntb=5316b816def2ba41e0241f54dc7efbd1&tbo=doc_CLI");
+        $q->execute(array($nome,$duracao));
+        header("Location: tabela.php?ntb=bceca77ab8c59eeaf2e6d6a323be0ae7&tbo=nome");
       }
 ?>
-<h1>Tabela competiu</h1>
-<form action="page.php?ntb=5316b816def2ba41e0241f54dc7efbd1&tb=1" method="post" data-abide novalidate>
+<h1>Tabela jogo</h1>
+<form action="page.php?ntb=bceca77ab8c59eeaf2e6d6a323be0ae7&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Selecione o ID da partida
-        <select id="select" name="vID" required>
-          <option value="">--SELECIONE O ID--</option>
-          <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Partida ORDER BY id ASC';
-            foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['id'] . '">'. $row['id'] . '</option>';
-            }
-          ?>
-        </select>
-        <span class="form-error">
-          Koé, você não pode deixar isso em branco!
-        </span>
-      </label>
-    </div>
-    <div class="medium-6 columns">
-      <label>*Selecione o nome do cliente
-        <select id="select" name="vDOC" required>
-          <option value="">--SELECIONE O NOME--</option>
-          <?php
-          $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY doc_pes ASC';
-          foreach ($pdo->query($sql) as $row) {
-            if(!empty($row['pseudominio']))
-              echo '<option value="'. $row['doc_pes'] .'">'. $row['pseudominio'] .'</option>';
-            else {
-              echo '<option value="'. $row['doc_pes'] .'">'. $row['doc_pes'] .'</option>';
-            }
-          }
-          ?>
-        </select>
-        <span class="form-error">
-          Koé, você não pode deixar isso em branco!
-        </span>
+      <label>Digite o nome do jogo.
+        <input type="text" name="vNOME" placeholder="BlackJack (30)" aria-describedby="Digite o nome do jogo." required pattern="text">
       </label>
     </div>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Quanto apostou
+      <label>*Selecione o nome do jogo
+        <select id="select" name="vNOME_JGO" required>
+          <option value="">--SELECIONE O JOGO--</option>
+          <?php
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Jogo ORDER BY nome ASC';
+            foreach ($pdo->query($sql) as $row) {
+              echo '<option value="'. $row['nome'] . '">'. $row['nome'] . '</option>';
+            }
+          ?>
+        </select>
+        <span class="form-error">
+          Koé, você não pode deixar isso em branco!
+        </span>
+      </label>
+    </div>
+    <div class="medium-6 columns">
+      <label>Data e hora da compra.
+        <input type="text" name="vDATA" placeholder="1991-10-05 19:59:02" aria-describedby="Digite a data e hora" required pattern="text">
+      </label>
+      <p class="help-text" id="exampleHelpText">Caso deseje permanecer anônimo, por favor preencha este campo!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-6 columns">
+      <label>*Quanto foi apostado
         <div class="input-group">
           <span class="input-group-label">$</span>
           <input class="input-group-field" name="vAPOSTOU" required type="number">
@@ -71,7 +62,7 @@ if ( !empty($_POST)) {
       <p class="help-text" id="exampleHelpText">Digite o valor que foi apostado.</p>
     </div>
     <div class="medium-6 columns">
-      <label>*Quanto ganhou
+      <label>*Quanto foi ganho
         <div class="input-group">
           <span class="input-group-label">$</span>
           <input class="input-group-field" name="vGANHOU" required type="number">
@@ -80,7 +71,7 @@ if ( !empty($_POST)) {
           </span>
         </div>
       </label>
-      <p class="help-text" id="exampleHelpText">Digite o valor que foi ganho.</p>
+      <p class="help-text" id="exampleHelpText">Digite o valor que foi apostado.</p>
     </div>
   </div>
   <div class="row">
