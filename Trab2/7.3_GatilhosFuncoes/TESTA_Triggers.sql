@@ -18,7 +18,17 @@ INSERT INTO TB_Pessoa VALUES ('12345678' , 'Pessoa Teste 1' , 'RG' , 'M' , '1972
 INSERT INTO TB_Pessoa VALUES ('1234567' , 'Pessoa Teste 2' , 'PP' , 'M' , '19720421' );
 -- ERROR MAIOR
 INSERT INTO TB_Pessoa VALUES ('1234567890' , 'Pessoa Teste 1' , 'RG' , 'M' , '19720421' );
-INSERT INTO TB_Pessoa VALUES ('123456789' , 'Pessoa Teste 2' , 'PP' , 'M' , '19720421' );
+INS
+ERT INTO TB_Pessoa VALUES ('123456789' , 'Pessoa Teste 2' , 'PP' , 'M' , '19720421' );
+
+
+-- Testa quantidade de jogadores de um jogo em grupo
+-- OK , minimo abaixo do maximo
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Teste 01' , 2 , 4 , 0 );
+-- OK , minimo igual ao maximo
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Teste 02' , 4 , 4 , 0 );
+-- ERRO , minimo acima do maximo
+INSERT INTO TB_JogoEmGrupo VALUES ( 'Teste 03' , 4 , 2 , 0 );
 
 
 -- Testa quantidade de competidores ( partida de poker )
