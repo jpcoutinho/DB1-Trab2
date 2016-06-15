@@ -30,7 +30,29 @@ CREATE TRIGGER checa_transacao_minima
 			FOR EACH ROW
 				EXECUTE PROCEDURE transacao_minima();
 				
-
+-- Ao cadastrar um jogo em grupo, quantidade de jogadores minima nao pode ser maior do que a maxima
+DROP FUNCTION jogoEmGrupo_Min_Max() CASCADE;
+CREATE FUNCTION jogoEmGrupo_Min_Max() 
+	RETURNS trigger AS
+		$BODY$
+			DECLARE
+			BEGIN
+				IF NEW.jogadores_min > EW.jogadores_max THEN
+				RAISE EXCEPTION 'Transação não efetuada'
+				      USING HINT = 'Qtd minima de jogadores não pode ser superior a máxima';
+				END IF;
+				
+				RETURN NEW;
+			END;
+		$BODY$
+	LANGUAGE plpgsql;
+	
+CREATE TRIGGER checa_jogoEmGrupo_Min_Max
+	BEFORE INSERT OR UPDATE
+		ON TB_JogoEmGrupo
+			FOR EACH ROW
+				EXECUTE PROCEDURE jogoEmGrupo_Min_Max();
+				
 -- Checa tipo do documento: SSN vs PP
 DROP FUNCTION tipo_documento() CASCADE;
 CREATE FUNCTION tipo_documento()
