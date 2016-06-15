@@ -1,6 +1,31 @@
 -- Sobre os dias que os clientes jogaram
 SET SCHEMA 'trab2teste';
 
+-- Nome do Cliente , Nome da Franquia , Data da Primeira vez q ele visitou cada Franquia
+SELECT 
+	PES.nome AS Nome ,
+	FRA.nome AS Franquia ,
+	min( FRQ.data ) AS Data_Primeira_Visita
+FROM TB_Pessoa PES , TB_Frequentou FRQ , TB_Franquia FRA
+WHERE FRQ.doc_CLI = PES.doc
+AND FRQ.tin_FRA = FRA.tin
+GROUP BY PES.nome , FRA.nome
+ORDER BY PES.nome , Data_Primeira_Visita;
+
+-- Nome do Cliente , Nome da Franquia , Data da Ultima vez q ele visitou cada Franquia
+SELECT 
+	PES.nome AS Nome ,
+	FRA.nome AS Franquia ,
+	min( FRQ.data ) AS Data_Ultima_Visita
+FROM TB_Pessoa PES , TB_Frequentou FRQ , TB_Franquia FRA
+WHERE FRQ.doc_CLI = PES.doc
+AND FRQ.tin_FRA = FRA.tin
+GROUP BY PES.nome , FRA.nome
+ORDER BY PES.nome , Data_Ultima_Visita DESC;
+
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- Essas abaixo não usam nada de novo, mas são interessantes
+
 -- Documento do Cliente , Nome do Cliente , Data da Partida EM GRUPO
 SELECT 
 	PES.doc AS Documento ,
@@ -21,8 +46,8 @@ WHERE JOG.doc_CLI = PES.doc
 ORDER BY PES.doc;
 
 -- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
 -- PESSOAL - APENAS PARA AJUDAR A CRIAR AS OUTRAS CONEXOES
+
 -- Documento do Cliente , Doc da Franquia , Data da Partida EM GRUPO
 SELECT 
 	CPU.doc_CLI AS Documento ,
@@ -44,11 +69,20 @@ WHERE JOG.doc_CLI = JOG.doc_CLI
 AND JOG.snumber_MAQ = MAQ.snumber
 ORDER BY JOG.doc_CLI;
 
--- Documento do Cliente , Franquia , Data da Primeira vez q ele visitou a Franquia
+-- Documento do Cliente , Franquia , Data da Primeira vez q ele visitou cada Franquia
 SELECT 
 	FRQ.doc_CLI AS Documento ,
 	FRQ.tin_FRA AS Doc_Franquia ,
 	min(to_char( FRQ.data , 'YYYYMMDD' )) AS Data_Primeira_Visita
 FROM TB_Frequentou FRQ
 GROUP BY FRQ.doc_CLI , FRQ.tin_FRA
-ORDER BY FRQ.doc_CLI;
+ORDER BY FRQ.doc_CLI , Data_Primeira_Visita;
+
+-- Documento do Cliente , Franquia , Data da Ultima vez q ele visitou cada Franquia
+SELECT 
+	FRQ.doc_CLI AS Documento ,
+	FRQ.tin_FRA AS Doc_Franquia ,
+	max(to_char( FRQ.data , 'YYYYMMDD' )) AS Data_Ultima_Visita
+FROM TB_Frequentou FRQ
+GROUP BY FRQ.doc_CLI , FRQ.tin_FRA
+ORDER BY FRQ.doc_CLI , Data_Ultima_Visita DESC;
