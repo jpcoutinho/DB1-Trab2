@@ -59,7 +59,7 @@ SELECT
 	CPU.doc_CLI AS Documento_Cliente ,
 	sum(CPU.apostou + JOG.apostou) AS Total_Apostado ,
 	sum(CPU.ganhou + JOG.ganhou) AS Total_Ganho ,
-	sum( CPU.ganhou + JOG.apostou - CPU.apostou - JOG.ganhou) AS Saldo
+	sum( CPU.ganhou + JOG.ganhou - CPU.apostou - JOG.apostou) AS Saldo
 FROM TB_Competiu CPU , TB_Jogada JOG
 GROUP BY CPU.doc_CLI
 ORDER BY Saldo DESC;
@@ -69,7 +69,7 @@ SELECT
 	PES.nome AS Cliente ,
 	sum(CPU.apostou + JOG.apostou) AS Total_Apostado ,
 	sum(CPU.ganhou + JOG.ganhou) AS Total_Ganho ,
-	sum( CPU.ganhou + JOG.apostou - CPU.apostou - JOG.ganhou) AS Saldo
+	sum( CPU.ganhou + JOG.ganhou - CPU.apostou - JOG.apostou)  AS Saldo
 FROM TB_Competiu CPU , TB_Pessoa PES , TB_Jogada JOG
 WHERE CPU.doc_CLI = PES.doc
 AND JOG.doc_CLI = PES.doc
@@ -81,7 +81,7 @@ SELECT
 	PES.nome AS Cliente ,
 	sum(CPU.apostou + JOG.apostou) AS Total_Apostado ,
 	sum(CPU.ganhou + JOG.ganhou) AS Total_Ganho ,
-	sum( CPU.ganhou + JOG.apostou - CPU.apostou - JOG.ganhou) AS Saldo
+	sum( CPU.ganhou + JOG.ganhou - CPU.apostou - JOG.apostou)  AS Saldo
 FROM TB_Competiu CPU , TB_Pessoa PES , TB_Jogada JOG
 WHERE CPU.doc_CLI = PES.doc
 AND JOG.doc_CLI = PES.doc
