@@ -19,59 +19,20 @@ if ( !empty($_POST)) {
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>Digite o nome do jogo.
+      <label>*Digite o nome do jogo.
         <input type="text" name="vNOME" placeholder="BlackJack (30)" aria-describedby="Digite o nome do jogo." required pattern="text">
-      </label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="medium-6 columns">
-      <label>*Selecione o nome do jogo
-        <select id="select" name="vNOME_JGO" required>
-          <option value="">--SELECIONE O JOGO--</option>
-          <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Jogo ORDER BY nome ASC';
-            foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['nome'] . '">'. $row['nome'] . '</option>';
-            }
-          ?>
-        </select>
         <span class="form-error">
           Koé, você não pode deixar isso em branco!
         </span>
       </label>
     </div>
     <div class="medium-6 columns">
-      <label>Data e hora da compra.
-        <input type="text" name="vDATA" placeholder="1991-10-05 19:59:02" aria-describedby="Digite a data e hora" required pattern="text">
+      <label>*Digite a duração do jogo em minutos.
+        <input type="text" name="vDURACAO" placeholder="120.2" aria-describedby="Digite a duração do jogo em min." required pattern="number">
+        <span class="form-error">
+          Koé, você não pode deixar isso em branco!
+        </span>
       </label>
-      <p class="help-text" id="exampleHelpText">Caso deseje permanecer anônimo, por favor preencha este campo!</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="medium-6 columns">
-      <label>*Quanto foi apostado
-        <div class="input-group">
-          <span class="input-group-label">$</span>
-          <input class="input-group-field" name="vAPOSTOU" required type="number">
-          <span class="form-error">
-            Koé, você não pode deixar isso em branco!
-          </span>
-        </div>
-      </label>
-      <p class="help-text" id="exampleHelpText">Digite o valor que foi apostado.</p>
-    </div>
-    <div class="medium-6 columns">
-      <label>*Quanto foi ganho
-        <div class="input-group">
-          <span class="input-group-label">$</span>
-          <input class="input-group-field" name="vGANHOU" required type="number">
-          <span class="form-error">
-            Koé, você não pode deixar isso em branco!
-          </span>
-        </div>
-      </label>
-      <p class="help-text" id="exampleHelpText">Digite o valor que foi apostado.</p>
     </div>
   </div>
   <div class="row">

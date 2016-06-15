@@ -24,9 +24,9 @@
       $t = "TB_Jogada";
     elseif($tbnome==='bceca77ab8c59eeaf2e6d6a323be0ae7')
       $t = "TB_Jogo";
-    elseif($tbnome===strtolower("BCECA77AB8C59EEAF2E6D6A323BE0AE7"))
-      $t = "TB_JogoEmGrupo";
     elseif($tbnome===strtolower("0F46C1D95833F44BF262DBFD167EDD46"))
+      $t = "TB_JogoEmGrupo";
+    elseif($tbnome===strtolower("B6E5A04E7A1D70C4D3D9B3756973A4B5"))
       $t = "TB_JogoIndividual";
     elseif($tbnome===strtolower("EAFF6C1F31F280F1BD68C5D54469F61B"))
       $t = "TB_Maquina";
