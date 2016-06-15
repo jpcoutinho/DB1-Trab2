@@ -20,6 +20,8 @@ FROM TB_Jogada JOG , TB_Pessoa PES
 WHERE JOG.doc_CLI = PES.doc
 ORDER BY PES.doc;
 
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 -- PESSOAL - APENAS PARA AJUDAR A CRIAR AS OUTRAS CONEXOES
 -- Documento do Cliente , Nome do Cliente , Data da Partida EM GRUPO
 SELECT 
