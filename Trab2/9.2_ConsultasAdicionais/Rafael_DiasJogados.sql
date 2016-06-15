@@ -23,7 +23,7 @@ ORDER BY PES.doc;
 -- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 -- PESSOAL - APENAS PARA AJUDAR A CRIAR AS OUTRAS CONEXOES
--- Documento do Cliente , Nome do Cliente , Data da Partida EM GRUPO
+-- Documento do Cliente , Doc da Franquia , Data da Partida EM GRUPO
 SELECT 
 	CPU.doc_CLI AS Documento ,
 	MES.tin_FRA AS Franquia ,
@@ -34,7 +34,7 @@ AND PAR.ID = CPU.ID_PAR
 AND MES.numero = PAR.numero_MES
 ORDER BY CPU.doc_CLI;
 
--- Documento do Cliente , Nome do Cliente , Data da Partida INDIVIDUAL
+-- Documento do Cliente , Doc da Franquia , Data da Partida INDIVIDUAL
 SELECT 
 	JOG.doc_CLI AS Documento ,
 	MAQ.tin_FRA AS Franquia , 
@@ -43,3 +43,12 @@ FROM TB_Jogada JOG , TB_Maquina MAQ
 WHERE JOG.doc_CLI = JOG.doc_CLI
 AND JOG.snumber_MAQ = MAQ.snumber
 ORDER BY JOG.doc_CLI;
+
+-- Documento do Cliente , Franquia , Data da Primeira vez q ele visitou a Franquia
+SELECT 
+	FRQ.doc_CLI AS Documento ,
+	FRQ.tin_FRA AS Doc_Franquia ,
+	min(to_char( FRQ.data , 'YYYYMMDD' )) AS Data_Primeira_Visita
+FROM TB_Frequentou FRQ
+GROUP BY FRQ.doc_CLI , FRQ.tin_FRA
+ORDER BY FRQ.doc_CLI;
