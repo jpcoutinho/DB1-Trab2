@@ -211,11 +211,11 @@ INSERT INTO TB_Frequentou VALUES ('100000008' , '700600501' , TO_DATE('20021008'
 -- COMPRAS E VENDAS 
 -- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3000 , '100000000' , 10000 , TO_DATE('20010501' , 'YYYYMMDD') );
-INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3001 , '100000002' , 10000 , TO_DATE('20010501' , 'YYYYMMDD') );
+INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3000 , '100000000' , 50000 , TO_DATE('20010501' , 'YYYYMMDD') );
+INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3001 , '100000002' , 60000 , TO_DATE('20010501' , 'YYYYMMDD') );
 INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3002 , '100000003' , 5537000 , TO_DATE('20010501' , 'YYYYMMDD') );
-INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3003 , '100000004' , 2000 , TO_DATE('20010501' , 'YYYYMMDD') );
-INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3004 , '100000005' , 2000 , TO_DATE('20010501' , 'YYYYMMDD') );
+INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3003 , '100000004' , 55000 , TO_DATE('20010501' , 'YYYYMMDD') );
+INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3004 , '100000005' , 72000 , TO_DATE('20010501' , 'YYYYMMDD') );
 INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3005 , '100000006' , 901000 , TO_DATE('20010501' , 'YYYYMMDD') );
 INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3002 , '100000007' , 19864500 , TO_DATE('20010501' , 'YYYYMMDD') );
 INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 3003 , '100000008' , 13873500 , TO_DATE('20010501' , 'YYYYMMDD') );
