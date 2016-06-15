@@ -567,6 +567,107 @@ VALUES ('100000003' , 2008 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 30000 , 9
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
 VALUES ('100000003' , 2009 , 'Slot' , TO_DATE('20021004','YYYYMMDD') , 30000 , 90000 );
 
--- Slot 23
+-- Slot 25
 INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
 VALUES ('100000003' , 2010 , 'Slot' , TO_DATE('20021002','YYYYMMDD') , 30000 , 20000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000008' , 2011 , 'Keno' , TO_DATE('20021003','YYYYMMDD') , 10000 , 40000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000004' , 2011 , 'Pai Gow Poker' , TO_DATE('20021003','YYYYMMDD') , 70000 , 40000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000002' , 2011 , 'Black Jack' , TO_DATE('20021005','YYYYMMDD') , 20000 , 30000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000003' , 2012 , 'Keno' , TO_DATE('20021001','YYYYMMDD') , 10000 , 30000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000005' , 2012 , 'Pai Gow Poker' , TO_DATE('20021004','YYYYMMDD') , 10000 , 20000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000007' , 2012 , 'Black Jack' , TO_DATE('20021002','YYYYMMDD') , 70000 , 40000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000002' , 2013 , 'Keno' , TO_DATE('20021002','YYYYMMDD') , 20000 , 10000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000003' , 2013 , 'Pai Gow Poker' , TO_DATE('20021003','YYYYMMDD') , 70000 , 90000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000008' , 2013 , 'Black Jack' , TO_DATE('20021007','YYYYMMDD') , 30000 , 20000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000003' , 2014 , 'Keno' , TO_DATE('20021004','YYYYMMDD') , 50000 , 10000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000007' , 2014 , 'Pai Gow Poker' , TO_DATE('20021002','YYYYMMDD') , 20000 , 30000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000005' , 2014 , 'Black Jack' , TO_DATE('20021009','YYYYMMDD') , 35000 , 30000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000000' , 2015 , 'Keno' , TO_DATE('20021001','YYYYMMDD') , 70000 , 20000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000002' , 2015 , 'Pai Gow Poker' , TO_DATE('20021005','YYYYMMDD') , 50000 , 10000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000003' , 2015 , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 15000 , 60000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000004' , 2016 , 'Keno' , TO_DATE('20021001','YYYYMMDD') , 30000 , 70000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000005' , 2016 , 'Pai Gow Poker' , TO_DATE('20021005','YYYYMMDD') , 80000 , 40000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000006' , 2016 , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 35000 , 50000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000007' , 2017 , 'Keno' , TO_DATE('20021002','YYYYMMDD') , 50000 , 30000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000008' , 2017 , 'Pai Gow Poker' , TO_DATE('20021003','YYYYMMDD') , 60000 , 40000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000004' , 2017 , 'Black Jack' , TO_DATE('20021001','YYYYMMDD') , 35000 , 90000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000003' , 2018 , 'Keno' , TO_DATE('20021008','YYYYMMDD') , 51000 , 60000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000002' , 2018 , 'Pai Gow Poker' , TO_DATE('20021005','YYYYMMDD') , 50000 , 30000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000007' , 2018 , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 75000 , 20000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000002' , 2019 , 'Keno' , TO_DATE('20021008','YYYYMMDD') , 83000 , 40000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000008' , 2019 , 'Pai Gow Poker' , TO_DATE('20021005','YYYYMMDD') , 57000 , 20000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000006' , 2019 , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 45000 , 10000 );
+
+-- Maq Generica
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000001' , 2020 , 'Keno' , TO_DATE('20021008','YYYYMMDD') , 23000 , 30000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000007' , 2020 , 'Pai Gow Poker' , TO_DATE('20021005','YYYYMMDD') , 37000 , 50000 );
+
+INSERT INTO TB_Jogada ( doc_CLI , snumber_MAQ , nome_JGO , data , apostou , ganhou )
+VALUES ('100000003' , 2020 , 'Black Jack' , TO_DATE('20021003','YYYYMMDD') , 25000 , 20000 );
+
