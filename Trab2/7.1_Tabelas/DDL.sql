@@ -283,30 +283,5 @@ ALTER TABLE TB_Pessoa
 		CHECK (nascimento < CURRENT_DATE);
 
 
--- Functions And Triggers
-
-DROP FUNCTION transacao_minima() CASCADE;
-CREATE FUNCTION transacao_minima()
-	RETURNS trigger AS
-		$BODY$
-			DECLARE
-			BEGIN
-				IF NEW.valor < 50000 THEN
-				RAISE EXCEPTION 'Transação não efetuada'
-				      USING HINT = 'Valor abaixo do minimo';
-				END IF;
-				
-				RETURN NEW;
-			END;
-		$BODY$
-	LANGUAGE plpgsql;
-	
-CREATE TRIGGER checa_transacao_minima
-	BEFORE INSERT OR UPDATE
-		ON TB_Comprou
-			FOR EACH ROW
-				EXECUTE PROCEDURE transacao_minima()
-		
-	
 
 
