@@ -7,4 +7,4 @@ SELECT
 	sum(CPU.ganhou) AS Total_Ganho
 FROM TB_Competiu CPU
 GROUP BY CPU.doc_CLI
-ORDER BY CPU.doc_CLI
+ORDER BY CPU.doc_CLI;
