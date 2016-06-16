@@ -26,7 +26,6 @@ if ( !empty($_POST)) {
           Koé, você não pode deixar isso em branco!
         </span>
       </label>
-      <p class="help-text" id="exampleHelpText">Por favor digite o numero do TIN!</p>
     </div>
     <div class="medium-6 columns">
       <label>*Número de contato
@@ -35,7 +34,6 @@ if ( !empty($_POST)) {
           Koé, você não pode deixar isso em branco!
         </span>
       </label>
-      <p class="help-text" id="exampleHelpText">Por favor digite o nome!</p>
     </div>
   </div>
   <div class="row">
@@ -46,7 +44,6 @@ if ( !empty($_POST)) {
           Koé, você não pode deixar isso em branco!
         </span>
       </label>
-      <p class="help-text" id="exampleHelpText">Por favor digite o endereço!</p>
     </div>
   </div>
   <div class="row">

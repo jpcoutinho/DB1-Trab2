@@ -4,25 +4,26 @@ $pdo = BancodeDados::conecta();
 
 if ( !empty($_POST)) {
         $doc = $_POST['vDOC'];
-        $tin = $_POST['vTIN'];
+        $ncax = $_POST['vNUMERO'];
+        $valor = $_POST['vVAL'];
         $data = $_POST['vDATA'];
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'INSERT INTO '. $BDSchema .'TB_Frequentou (doc_CLI,tin_FRA,data) VALUES(?, ?, ?)';
+        $sql = 'INSERT INTO '. $BDSchema .'TB_Vendeu (doc_cli,numero_cax,valor,data) VALUES(?, ?, ?, ?)';
         $q = $pdo->prepare($sql);
-        $q->execute(array($doc,$tin,$data));
-        header("Location: tabela.php?ntb=3abcfcb700acd4310c5c4d9375ad88cf&tbo=doc_CLI");
+        $q->execute(array($doc,$ncax,$valor,$data));
+        header("Location: tabela.php?ntb=be5d5600f69779cad9d135cb9b83af79&tbo=doc_CLI");
       }
 ?>
-<h1>Tabela frquentou</h1>
-<form action="page.php?ntb=3abcfcb700acd4310c5c4d9375ad88cf&tb=1" method="post" data-abide novalidate>
+<h1>Tabela vendeu</h1>
+<form action="page.php?ntb=be5d5600f69779cad9d135cb9b83af79&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Selecione o cliente
+      <label>*Selecione o documento do cliente
         <select id="select" name="vDOC" required>
-          <option value="">--SELECIONE O CLIENTE--</option>
+          <option value="">--SELECIONE O DOCUMENTO--</option>
           <?php
           $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY doc_pes ASC';
           foreach ($pdo->query($sql) as $row) {
@@ -40,13 +41,13 @@ if ( !empty($_POST)) {
       </label>
     </div>
     <div class="medium-6 columns">
-      <label>*Selecione a franquia
-        <select id="select" name="vTIN" required>
-          <option value="">--SELECIONE O TIN--</option>
+      <label>*Selecione o numero do caixa
+        <select id="select" name="vNUMERO" required>
+          <option value="">--SELECIONE O NUMERO--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Franquia ORDER BY nome ASC';
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Caixa ORDER BY numero ASC';
             foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['tin'] . '">'. $row['nome'] . '</option>';
+              echo '<option value="'. $row['numero'] . '">'. $row['numero'] . '</option>';
             }
           ?>
         </select>
@@ -58,8 +59,20 @@ if ( !empty($_POST)) {
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Digite o dia e a hora
-        <input type="text" name="vDATA" placeholder="1991-05-20 20:05:59" aria-describedby="Digite o dia e a hora" required pattern="text">
+      <label>*Quanto foi vendido
+        <div class="input-group">
+          <span class="input-group-label">$</span>
+          <input class="input-group-field" name="vVAL" required type="number">
+          <span class="form-error">
+            Koé, você não pode deixar isso em branco!
+          </span>
+        </div>
+      </label>
+      <p class="help-text" id="exampleHelpText">Digite o valor que foi apostado.</p>
+    </div>
+    <div class="medium-6 columns">
+      <label>Data da transação
+        <input type="text" name="vDATA" placeholder="1991-05-20 20:05:59" aria-describedby="Data de nascimento." required pattern="text">
         <span class="form-error">
           Koé, você não pode deixar isso em branco!
         </span>

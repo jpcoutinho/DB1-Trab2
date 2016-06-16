@@ -80,7 +80,6 @@ if ( !empty($_POST)) {
       <label>Data e hora da compra.
         <input type="text" name="vDATA" placeholder="1991-10-05 19:59:02" aria-describedby="Digite a data e hora" required pattern="text">
       </label>
-      <p class="help-text" id="exampleHelpText">Caso deseje permanecer anônimo, por favor preencha este campo!</p>
     </div>
   </div>
   <div class="row">

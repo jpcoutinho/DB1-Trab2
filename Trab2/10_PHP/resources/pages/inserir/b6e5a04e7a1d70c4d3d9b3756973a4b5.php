@@ -3,40 +3,32 @@ require_once('resources/config.php');
 $pdo = BancodeDados::conecta();
 
 if ( !empty($_POST)) {
-        $doc = $_POST['vDOC'];
-        $contato = $_POST['vCONTATO'];
+        $nome = $_POST['vNOME'];
+        $equipes = $_POST['vEQUIPES'];
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'INSERT INTO '. $BDSchema .'TB_ContatoPessoa (doc_PES,contato) VALUES(?, ?)';
+        $sql = 'INSERT INTO '. $BDSchema .'TB_JogoIndividual (nome_jgo) VALUES(?)';
         $q = $pdo->prepare($sql);
-        $q->execute(array($doc,$contato));
-        header("Location: tabela.php?ntb=4c882e4c843c6d24f0c70ad6079508e9&tbo=doc_PES");
+        $q->execute(array($nome));
+        header("Location: tabela.php?ntb=b6e5a04e7a1d70c4d3d9b3756973a4b5&tbo=nome_JGO");
       }
 ?>
-<h1>Tabela contato pessoa</h1>
-<form action="page.php?ntb=4c882e4c843c6d24f0c70ad6079508e9&tb=1" method="post" data-abide novalidate>
+<h1>Tabela jogo individual</h1>
+<form action="page.php?ntb=b6e5a04e7a1d70c4d3d9b3756973a4b5&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Selecione a pessoa
-        <select id="select" name="vDOC" required>
+      <label>*Selecione o nome do jogo
+        <select id="select" name="vNOME" required>
           <option value="">--SELECIONE O NOME--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Pessoa ORDER BY nome ASC';
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Jogo ORDER BY nome ASC';
             foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['doc'] . '">'. $row['nome'] . '</option>';
+              echo '<option value="'. $row['nome'] . '">'. $row['nome'] . '</option>';
             }
           ?>
         </select>
-        <span class="form-error">
-          Koé, você não pode deixar isso em branco!
-        </span>
-      </label>
-    </div>
-    <div class="medium-6 columns">
-      <label>*Número de contato
-        <input type="text" name="vCONTATO" placeholder="12345678901234" aria-describedby="Digite o numero de contato" required pattern="text">
         <span class="form-error">
           Koé, você não pode deixar isso em branco!
         </span>

@@ -4,34 +4,30 @@ $pdo = BancodeDados::conecta();
 
 if ( !empty($_POST)) {
         $doc = $_POST['vDOC'];
-        $tin = $_POST['vTIN'];
+        $numero = $_POST['vNUMERO'];
         $data = $_POST['vDATA'];
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'INSERT INTO '. $BDSchema .'TB_Frequentou (doc_CLI,tin_FRA,data) VALUES(?, ?, ?)';
+        $sql = 'INSERT INTO '. $BDSchema .'TB_Partida (doc_FUC,numero_MES,data) VALUES(?, ?, ?)';
         $q = $pdo->prepare($sql);
-        $q->execute(array($doc,$tin,$data));
-        header("Location: tabela.php?ntb=3abcfcb700acd4310c5c4d9375ad88cf&tbo=doc_CLI");
+        $q->execute(array($doc,$numero,$data));
+        header("Location: tabela.php?ntb=f3df806dc323278b7ceee93ff594327d&tbo=ID");
       }
 ?>
-<h1>Tabela frquentou</h1>
-<form action="page.php?ntb=3abcfcb700acd4310c5c4d9375ad88cf&tb=1" method="post" data-abide novalidate>
+<h1>Tabela jogo individual</h1>
+<form action="page.php?ntb=f3df806dc323278b7ceee93ff594327d&tb=1" method="post" data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
     <p><i class="fi-alert"></i> Seu formulário possue alguns erros.</p>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Selecione o cliente
+      <label>*Selecione o documento do funcionário
         <select id="select" name="vDOC" required>
-          <option value="">--SELECIONE O CLIENTE--</option>
+          <option value="">--SELECIONE O DOCUMENTO--</option>
           <?php
-          $sql = 'SELECT * FROM '. $BDSchema .'TB_Cliente ORDER BY doc_pes ASC';
-          foreach ($pdo->query($sql) as $row) {
-            if(!empty($row['pseudominio']))
-              echo '<option value="'. $row['doc_pes'] .'">'. $row['pseudominio'] .'</option>';
-            else {
-              echo '<option value="'. $row['doc_pes'] .'">'. $row['doc_pes'] .'</option>';
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Funcionario ORDER BY doc_pes ASC';
+            foreach ($pdo->query($sql) as $row) {
+              echo '<option value="'. $row['doc_pes'] . '">'. $row['doc_pes'] . '</option>';
             }
-          }
           ?>
         </select>
         <span class="form-error">
@@ -40,13 +36,13 @@ if ( !empty($_POST)) {
       </label>
     </div>
     <div class="medium-6 columns">
-      <label>*Selecione a franquia
-        <select id="select" name="vTIN" required>
-          <option value="">--SELECIONE O TIN--</option>
+      <label>*Selecione a mesa que ocorreu a partida.
+        <select id="select" name="vNUMERO" required>
+          <option value="">--SELECIONE A MESA--</option>
           <?php
-            $sql = 'SELECT * FROM '. $BDSchema .'TB_Franquia ORDER BY nome ASC';
+            $sql = 'SELECT * FROM '. $BDSchema .'TB_Mesa ORDER BY numero ASC';
             foreach ($pdo->query($sql) as $row) {
-              echo '<option value="'. $row['tin'] . '">'. $row['nome'] . '</option>';
+              echo '<option value="'. $row['numero'] . '">'. $row['numero'] . '</option>';
             }
           ?>
         </select>
@@ -58,8 +54,8 @@ if ( !empty($_POST)) {
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>*Digite o dia e a hora
-        <input type="text" name="vDATA" placeholder="1991-05-20 20:05:59" aria-describedby="Digite o dia e a hora" required pattern="text">
+      <label>Data e hora da partida.
+        <input type="text" name="vDATA" placeholder="1991-10-05 19:59:02" aria-describedby="Digite a data e hora" required pattern="text">
         <span class="form-error">
           Koé, você não pode deixar isso em branco!
         </span>
