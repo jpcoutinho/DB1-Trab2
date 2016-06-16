@@ -1,4 +1,9 @@
 <?php
+session_start(); /* Starts the session */
+if(!isset($_SESSION['UserData']['Username'])){
+	header("location:login.php");
+	exit;
+}
   require_once('resources/library/tbcodes.php');
   $strfile = $_GET['ntb'];
   $optipo = $_GET['tb'];

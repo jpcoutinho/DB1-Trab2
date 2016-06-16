@@ -1,3 +1,10 @@
+<?php
+session_start(); /* Starts the session */
+if(!isset($_SESSION['UserData']['Username'])){
+	header("location:login.php");
+	exit;
+}
+?>
 <!doctype html>
 <html class="no-js" lang="pt" dir="ltr">
   <head>
@@ -31,44 +38,21 @@
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Caixa',FALSE) .'&tbo=numero">Caixa</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Caixa',FALSE) .'">Caixa</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Cliente',FALSE) .'&tbo=doc_PES">Cliente</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Cliente',FALSE) .'">Cliente</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Competiu',FALSE) .'&tbo=doc_CLI">Competiu</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Comprou',FALSE) .'&tbo=doc_CLI">Comprou</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_ContatoFranquia',FALSE) .'&tbo=tin_FRA">Contato Franquia</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_ContatoPessoa',FALSE) .'&tbo=doc_PES">Contato Pessoa</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Competiu',FALSE) .'">Competiu</a>';
                   ?>
                 </div>
               </div>
@@ -77,44 +61,21 @@
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Franquia',FALSE) .'&tbo=tin">Franquia</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Comprou',FALSE) .'">Comprou</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Frequentou',FALSE) .'&tbo=doc_CLI">Frequentou</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_ContatoFranquia',FALSE) .'">Contato Franquia</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Funcionario',FALSE) .'&tbo=doc_PES">Funcionário</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Ganhou',FALSE) .'&tbo=doc_CLI">Ganhou</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Jogada',FALSE) .'&tbo=doc_CLI">Jogada</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Jogo',FALSE) .'&tbo=nome">Jogo</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_ContatoPessoa',FALSE) .'">Contato Pessoa</a>';
                   ?>
                 </div>
               </div>
@@ -123,44 +84,21 @@
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_JogoEmGrupo',FALSE) .'&tbo=nome_JGO">Jogo em Grupo</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Franquia',FALSE) .'">Franquia</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_JogoIndividual',FALSE) .'&tbo=nome_JGO">Jogo Individual</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Frequentou',FALSE) .'">Frequentou</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Maquina',FALSE) .'&tbo=snumber">Máquina</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Mesa',FALSE) .'&tbo=numero">Mesa</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Oferece',FALSE) .'&tbo=nome_JGI">Oferece</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Partida',FALSE) .'&tbo=ID">Partida</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Funcionario',FALSE) .'">Funcionário</a>';
                   ?>
                 </div>
               </div>
@@ -169,14 +107,83 @@
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Pessoa',FALSE) .'&tbo=nome">Pessoa</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Ganhou',FALSE) .'">Ganhou</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
                 <div class="callout" data-equalizer-watch>
                   <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Vendeu',FALSE) .'&tbo=doc_CLI">Vendeu</a>';
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Jogada',FALSE) .'">Jogada</a>';
+                  ?>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Jogo',FALSE) .'">Jogo</a>';
+                  ?>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_JogoEmGrupo',FALSE) .'">Jogo em Grupo</a>';
+                  ?>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_JogoIndividual',FALSE) .'">Jogo Individual</a>';
+                  ?>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Maquina',FALSE) .'">Máquina</a>';
+                  ?>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Mesa',FALSE) .'">Mesa</a>';
+                  ?>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Oferece',FALSE) .'">Oferece</a>';
+                  ?>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Partida',FALSE) .'">Partida</a>';
+                  ?>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-equalizer data-equalize-on="medium">
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Pessoa',FALSE) .'">Pessoa</a>';
+                  ?>
+                </div>
+              </div>
+              <div class="medium-4 columns">
+                <div class="callout" data-equalizer-watch>
+                  <?php
+                  echo '<a href="tabela.php?ntb=' .md5('TB_Vendeu',FALSE) .'">Vendeu</a>';
                   ?>
                 </div>
               </div>

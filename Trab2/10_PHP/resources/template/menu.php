@@ -7,8 +7,7 @@
         <span class="title-bar-title">INF1383</span>
       </div>
       <div class="title-bar-right">
-        <span class="title-bar-title">Login</span>
-        <button class="menu-icon" type="button" data-open="offCanvasRight"></button>
+        <span class="title-bar-title"><a href="logout.php">Logout</a></span>
       </div>
     </div>
     <!-- Menu off-canvas da esquerda -->
@@ -17,14 +16,6 @@
         <li><a href="left_item_1">Left item 1</a></li>
         <li><a href="left_item_2">Left item 2</a></li>
         <li><a href="left_item_3">Left item 3</a></li>
-      </ul>
-    </div>
-    <!-- Menu off-canvas da direita -->
-    <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
-      <ul class="vertical dropdown menu" data-dropdown-menu>
-        <li><a href="right_item_1">Right item 1</a></li>
-        <li><a href="right_item_2">Right item 2</a></li>
-        <li><a href="right_item_3">Right item 3</a></li>
       </ul>
     </div>
     <!-- Barra de menu largo para medio e acima -->
@@ -52,8 +43,7 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button class="button">Search</button></li>
+          <li><a class="button" href="logout.php">Logout</a></li>
         </ul>
       </div>
     </div>
