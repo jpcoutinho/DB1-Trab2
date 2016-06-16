@@ -43,8 +43,8 @@ require_once('resources/config.php');
           echo '<tr>';
           echo '<td>'. $row['id_par'] . '</td>';
           echo '<td>'. $row['doc_cli'] . '</td>';
-          echo '<td>'. $row['apostou'] . '</td>';
-          echo '<td>'. $row['ganhou'] . '</td>';
+          echo '<td>'. $Moeda .''. $row['apostou'] . '</td>';
+          echo '<td>'. $Moeda .''. $row['ganhou'] . '</td>';
           echo '<td><a class="button" href="page.php?id='. $_GET['ntb'] .'&tb=2">Ler</a><a class="warning button" href="page.php?id='. $_GET['ntb'] .'&tb=3">Editar</a><a class="alert button" href="page.php?id='. $_GET['ntb'] .'&tb=4">Deletar</a>';
           echo '</tr>';
         }

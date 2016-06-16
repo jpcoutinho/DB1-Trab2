@@ -28,7 +28,7 @@ require_once('resources/config.php');
     <table class="hover">
       <thead>
         <tr>
-          <th>Numero</th>
+          <th>Número</th>
           <th>Nome do jogo</th>
           <th>TIN</th>
           <th>Ações</th>
