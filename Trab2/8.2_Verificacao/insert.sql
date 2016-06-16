@@ -44,7 +44,7 @@ INSERT INTO TB_Comprou ( numero_CAX , doc_CLI , valor , data )  VALUES ( 1 , '10
 INSERT INTO TB_Vendeu ( numero_CAX , doc_CLI , valor , data )  VALUES ( 1 , '100000000' , 50000 , TO_DATE('20010501' , 'YYYYMMDD') );
 
 --Erro: Insert de Competiu para partida inexistente
-INSERT INTO TB_Competiu VALUES ( 1 , '100000000' , 10000 , 20000 );
+INSERT INTO TB_Competiu VALUES ( 999999 , '100000000' , 10000 , 20000 );
 
 --Erro: Insert de Ganhou para partida inexistente
-INSERT INTO TB_Ganhou VALUES ( 1 , '90000001' );
+INSERT INTO TB_Ganhou VALUES ( 999999 , '90000001' );
