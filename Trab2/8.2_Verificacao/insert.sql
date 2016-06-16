@@ -8,7 +8,7 @@ INSERT INTO TB_ContatoPessoa VALUES ( '1' , '12345600000000' );
 INSERT INTO TB_Cliente VALUES ('1' , NULL );
 
 -- Erro: Insert de funcionario para pessoa inexstente
-INSERT INTO TB_Funcionario VALUES ('1' , NULL );
+INSERT INTO TB_Funcionario VALUES ('1' , 11111 );
 
 -- Erro: Insert de jogo individual para jogo inexistente
 INSERT INTO TB_JogoIndividual VALUES ( 'Campo Minado' );
