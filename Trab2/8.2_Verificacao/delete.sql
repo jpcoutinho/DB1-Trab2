@@ -9,7 +9,8 @@ DELETE FROM TB_Funcionario FUC
 WHERE FUC.doc_PES = '100000001';
 
 -- Erro, deletar partidas: partidas normalmente são referenciadas por competidores e ganhadores
-DELETE * FROM TB_Partida PAR;
+DELETE FROM TB_Partida PAR
+WHERE PAR.id  = 1;
 
 -- Erro, deletar mesa: mesa é referenciada por partidas dos jogos
 DELETE FROM TB_Mesa MES
