@@ -1,5 +1,5 @@
 <?php
-  include('includes/config.php');
+  include('resources/config.php');
   $pdo = BancodeDados::conecta();
   $status = $pdo->getAttribute(PDO::ATTR_CONNECTION_STATUS);
   $pdo = BancodeDados::desconecta();
