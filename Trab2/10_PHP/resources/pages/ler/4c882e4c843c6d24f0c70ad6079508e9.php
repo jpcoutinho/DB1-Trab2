@@ -45,7 +45,7 @@ $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Pessoa PES, ". $BDSchema ."
   </div>
 </div>
 <div class="row align-center">
-  <div class="column small-4">
+  <div class="column small-6">
     <?php
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     echo '<span class="TitlText">Nome da pessoa:</span><span class="TextLeft">  '. $row['nome'] .'</span>';

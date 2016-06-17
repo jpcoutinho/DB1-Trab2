@@ -46,7 +46,7 @@ $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Cliente CLI WHERE CLI.doc_p
   </div>
 </div>
 <div class="row align-center">
-  <div class="column small-4">
+  <div class="column small-6">
     <?php
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     if (empty($row['pseudominio']))

@@ -44,7 +44,7 @@ $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_JogoEmGrupo JGG WHERE JGG.n
   </div>
 </div>
 <div class="row align-center">
-  <div class="column small-4">
+  <div class="column small-6">
     <?php
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     echo '<span class="TitlText">Nome do jogo:</span><span class="TextLeft">  '. $row['nome_jgo'] .'</span>';
