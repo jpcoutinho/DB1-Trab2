@@ -5,7 +5,7 @@ require_once('resources/config.php');
   <span class="TitTabel">Tabela Jogo em Grupo</span>
 </div>
 <div class="row">
-  <div class="medium-12 columns callout MarginTop">
+  <div class="medium-12 columns MarginTop">
     <nav aria-label="Você está aqui:" role="navigation">
       <ul class="breadcrumbs">
         <li><a href="index.php">Home</a></li>
@@ -45,7 +45,7 @@ require_once('resources/config.php');
           echo '<td>'. $row['jogadores_min'] . '</td>';
           echo '<td>'. $row['jogadores_max'] . '</td>';
           echo '<td>'. $row['equipes'] . '</td>';
-          echo '<td><a class="button" href="page.php?id='. $_GET['ntb'] .'&tb=2">Ler</a><a class="warning button" href="page.php?id='. $_GET['ntb'] .'&tb=3">Editar</a><a class="alert button" href="page.php?id='. $_GET['ntb'] .'&tb=4">Deletar</a>';
+          echo '<td><a class="button" href="page.php?ntb='. $_GET['ntb'] .'&tb=2&a='. $row['nome_jgo'] .'">Ler</a><a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=3&a='. $row['nome_jgo'] .'">Editar</a><a class="alert button" href="page.php?ntb='. $_GET['ntb'] .'&tb=4&a='. $row['nome_jgo'] .'">Deletar</a>';
           echo '</tr>';
         }
         BancodeDados::desconecta();

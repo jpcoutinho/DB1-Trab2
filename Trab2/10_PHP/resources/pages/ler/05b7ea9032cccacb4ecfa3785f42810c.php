@@ -5,7 +5,7 @@ require_once('resources/config.php');
   <span class="TitTabel">Tabela Pessoa</span>
 </div>
 <div class="row">
-  <div class="medium-12 columns callout MarginTop">
+  <div class="medium-12 columns MarginTop">
     <nav aria-label="Você está aqui:" role="navigation">
       <ul class="breadcrumbs">
         <li><a href="index.php">Home</a></li>
@@ -47,7 +47,7 @@ require_once('resources/config.php');
           echo '<td>'. $row['tipodoc'] . '</td>';
           echo '<td>'. $row['sexo'] . '</td>';
           echo '<td>'. $row['nascimento'] . '</td>';
-          echo '<td><a class="button" href="page.php?id='. $_GET['ntb'] .'&tb=2">Ler</a><a class="warning button" href="page.php?id='. $_GET['ntb'] .'&tb=3">Editar</a><a class="alert button" href="page.php?id='. $_GET['ntb'] .'&tb=4">Deletar</a>';
+          echo '<td><a class="button" href="page.php?ntb='. $_GET['ntb'] .'&tb=2&a='. $row['doc'] .'">Ler</a><a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=3&a='. $row['doc'] .'">Editar</a><a class="alert button" href="page.php?ntb='. $_GET['ntb'] .'&tb=4&a='. $row['doc'] .'">Deletar</a>';
           echo '</tr>';
         }
         BancodeDados::desconecta();

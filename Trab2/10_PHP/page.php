@@ -28,35 +28,6 @@ if(!isset($_SESSION['UserData']['Username'])){
           <div class="row column MaxWidth">
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="row">
-                <div class="medium-12 columns callout MarginTop">
-                  <nav aria-label="Você está aqui:" role="navigation">
-                    <ul class="breadcrumbs">
-                      <li><a href="index.php">Home</a></li>
-                      <li class="disabled">Visualização de tabela</li>
-                      <li>
-                        <?php
-                        if($optipo==1){
-                          echo '<span class="show-for-sr">Atual: </span> Inserir entrada';
-                        }
-                        elseif ($optipo==2) {
-                          echo '<span class="show-for-sr">Atual: </span> Visualizar entrada';
-                        }
-                        elseif ($optipo==3) {
-                          echo '<span class="show-for-sr">Atual: </span> Atualizar entrada';
-                        }
-                        elseif ($optipo==4) {
-                          echo '<span class="show-for-sr">Atual: </span> Deletar entrada';
-                        }
-                        else{
-                          echo '<span class="show-for-sr">Atual: </span> OPERAÇÃO NÃO PERMITIDA!!';
-                        }
-                        ?>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-              <div class="row">
                 <div class="medium-12 columns">
                   <?php
                   if($optipo==1){

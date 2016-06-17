@@ -5,7 +5,7 @@ require_once('resources/config.php');
   <span class="TitTabel">Tabela Franquia</span>
 </div>
 <div class="row">
-  <div class="medium-12 columns callout MarginTop">
+  <div class="medium-12 columns MarginTop">
     <nav aria-label="Você está aqui:" role="navigation">
       <ul class="breadcrumbs">
         <li><a href="index.php">Home</a></li>

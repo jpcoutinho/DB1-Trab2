@@ -23,15 +23,6 @@ if(!isset($_SESSION['UserData']['Username'])){
         <div class="off-canvas-content" data-off-canvas-content>
           <div class="row column MaxWidth">
             <div class="row">
-              <div class="medium-12 columns callout MarginTop">
-                <nav aria-label="You are here:" role="navigation">
-                  <ul class="breadcrumbs">
-                    <li class="disabled">Home</li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <div class="row">
               <h2>Selecione uma tabela</h2>
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
