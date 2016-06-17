@@ -41,7 +41,7 @@ require_once('resources/config.php');
           echo '<tr>';
           echo '<td>'. $row['doc_pes'] . '</td>';
           if(empty($row['pseudominio']))
-            echo '<td>**NÃO POSSUE**</td>';
+            echo '<td>**NÃO POSSUI**</td>';
           else {
             echo '<td>'. $row['pseudominio'] . '</td>';
           }

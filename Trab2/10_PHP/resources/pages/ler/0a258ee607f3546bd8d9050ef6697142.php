@@ -15,7 +15,7 @@ $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Franquia FRA, ". $BDSchema 
         <li><a href="index.php">Home</a></li>
         <li><a href="tabela.php?ntb=0a258ee607f3546bd8d9050ef6697142">Tabela Contato Franquia</a></li>
         <li>
-          <span class="show-for-sr">Atual: </span> Visualizar entrada entrada
+          <span class="show-for-sr">Atual: </span> Visualizar entrada
         </li>
       </ul>
     </nav>
