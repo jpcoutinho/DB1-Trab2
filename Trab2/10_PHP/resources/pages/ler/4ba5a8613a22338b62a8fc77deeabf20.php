@@ -36,7 +36,7 @@ $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Cliente CLI WHERE CLI.doc_p
       <div class="row align-justify">
         <div class="column small-4"><a data-close aria-label="Cancelar" class="success button">Cancelar</a></div>
         <?php
-        echo '<div class="column small-4"><a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=4&&a='. $doc_cli .'&b='. $tin_fra .'&c='. $data .'">Deletar</a></div>';
+        echo '<div class="column small-4"><a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=4&&a='. $snumber_maq .'&b='. $tin_fra .'&c='. $data .'">Deletar</a></div>';
         ?>
       </div>
       <button class="close-button" data-close aria-label="Close modal" type="button">
