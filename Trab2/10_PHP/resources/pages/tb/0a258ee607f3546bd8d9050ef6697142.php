@@ -41,7 +41,7 @@ require_once('resources/config.php');
           echo '<tr>';
           echo '<td>'. $row['tin_fra'] . '</td>';
           echo '<td>'. $row['contato'] . '</td>';
-          echo '<td><a class="button" href="page.php?ntb='. $_GET['ntb'] .'&tb=2&a='. $row['tin_fra'] .'&b='. $row['contato'] .'">Ler</a><a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=3&a='. $row['tin_fra'] .'&b='. $row['contato'] .'">Editar</a><a class="alert button" href="page.php?ntb='. $_GET['ntb'] .'&tb=4&a='. $row['tin_fra'] .'&b='. $row['contato'] .'">Deletar</a>';
+          echo '<td><div class="small button-group"><a class="button" href="page.php?ntb='. $_GET['ntb'] .'&tb=2&a='. $row['tin_fra'] .'&b='. $row['contato'] .'">Ler</a><a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=3&a='. $row['tin_fra'] .'&b='. $row['contato'] .'">Editar</a><a class="alert button" href="page.php?ntb='. $_GET['ntb'] .'&tb=4&a='. $row['tin_fra'] .'&b='. $row['contato'] .'">Deletar</a></div>';
           echo '</tr>';
         }
         BancodeDados::desconecta();
