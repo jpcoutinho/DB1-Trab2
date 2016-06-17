@@ -1,9 +1,14 @@
 <?php
 require_once('resources/config.php');
 $pdo = BancodeDados::conecta();
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $tin_fra = $_GET['a'];
 $contato = $_GET['b'];
+
+$sql = "SELECT * FROM '. $BDSchema .'TB_Franquia FRA, '. $BDSchema .'TB_ContatoFranquia COF WHERE FRA.tin = ? && COF.contato = ?";
+$q = $pdo->prepare($sql);
+$q->execute(array($tin_fra,$contato));
+$data = $q->fetch(PDO::FETCH_ASSOC);
+BancodeDados::desconecta();
 ?>
 <div class="row">
   <span class="TitTabel">Visualização de um contato de uma franquia</span>
@@ -21,25 +26,18 @@ $contato = $_GET['b'];
   </div>
 </div>
 <div class="row">
-  <div class="medium-12 columns">
-    <table class="stack">
-      <thead>
-        <tr>
-        <th></th>
-        <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
+  <div class="row align-center">
+    <div class="column small-6">
+      <div class="row">
+        <div class="column small-6">
+          <span class="NomeLeft">Franquia:</span>
+        </div>
+        <div class="column small-6">
           <?php
-          echo '<td>'. $tin_fra .'</td>';
-          echo '<td>'. $contato .'</td>'; 
+          echo 'Nome: '. $data['FRA.nome'] .' & '. $data['COF.contato'] .' ';
           ?>
-        </tr>
-      </tbody>
-    </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<?php
-BancodeDados::desconecta();
-?>
