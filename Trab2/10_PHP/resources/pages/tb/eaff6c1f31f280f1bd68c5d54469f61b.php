@@ -39,9 +39,9 @@ require_once('resources/config.php');
         $sql = 'SELECT * FROM '. $BDSchema .'TB_Maquina ORDER BY snumber ASC';
         foreach ($pdo->query($sql) as $row) {
           echo '<tr>';
-          echo '<td>'. $row['snumber'] . '</td>';
+          echo '<td>'. $row['snumber'] .'</td>';
           echo '<td>'. $row['tin_fra'] . '</td>';
-          echo '<td><a class="button" href="page.php?id='. $_GET['ntb'] .'&tb=2">Ler</a><a class="warning button" href="page.php?id='. $_GET['ntb'] .'&tb=3">Editar</a><a class="alert button" href="page.php?id='. $_GET['ntb'] .'&tb=4">Deletar</a>';
+          echo '<td><a class="button" href="page.php?ntb='. $_GET['ntb'] .'&tb=2&a'. $row['snumber'] .'">Ler</a><a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=3&a='. $row['snumber'] .'">Editar</a><a class="alert button" href="page.php?ntb='. $_GET['ntb'] .'&tb=4&a='. $row['snumber'] .'">Deletar</a>';
           echo '</tr>';
         }
         BancodeDados::desconecta();
