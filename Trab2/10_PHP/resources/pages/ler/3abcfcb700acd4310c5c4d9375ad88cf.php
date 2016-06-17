@@ -14,7 +14,7 @@ $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Cliente CLI WHERE CLI.doc_p
     <nav aria-label="Você está aqui:" role="navigation">
       <ul class="breadcrumbs">
         <li><a href="index.php">Home</a></li>
-        <?php echo '<li><a href="tabela.php?ntb='. $_GET['ntb'] .'">Tabela Frequentou/a></li>' ?>
+        <?php echo '<li><a href="tabela.php?ntb='. $_GET['ntb'] .'">Tabela Frequentou</a></li>' ?>
         <li>
           <span class="show-for-sr">Atual: </span> Visualizar entrada
         </li>
