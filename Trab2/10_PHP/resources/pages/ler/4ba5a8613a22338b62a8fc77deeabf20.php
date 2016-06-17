@@ -26,7 +26,7 @@ $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Cliente CLI WHERE CLI.doc_p
   <div class="medium-12 columns MarginTop">
     <div class="button-group">
       <?php
-      echo '<a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=3&a='. $doc_cli .'&b='. $tin_fra .'&c='. $data .'">Editar</a>';
+      echo '<a class="warning button" href="page.php?ntb='. $_GET['ntb'] .'&tb=3&a='. $doc_cli .'&b='. $snumber_maq .'&c='. $data .'">Editar</a>';
       ?>
       <a data-open="exampleModal1" class="alert button">Deletar</a>
     </div>
