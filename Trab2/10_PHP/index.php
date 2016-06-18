@@ -27,21 +27,21 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Caixa',FALSE) .'">Caixa</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Cliente',FALSE) .'">Cliente</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Competiu',FALSE) .'">Competiu</a>';
                   ?>
@@ -50,21 +50,21 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Comprou',FALSE) .'">Comprou</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout success" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_ContatoFranquia',FALSE) .'">Contato Franquia</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout success" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_ContatoPessoa',FALSE) .'">Contato Pessoa</a>';
                   ?>
@@ -73,21 +73,21 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Franquia',FALSE) .'">Franquia</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout success" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Frequentou',FALSE) .'">Frequentou</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Funcionario',FALSE) .'">Funcionário</a>';
                   ?>
@@ -96,21 +96,21 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Ganhou',FALSE) .'">Ganhou</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout success" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Jogada',FALSE) .'">Jogada</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Jogo',FALSE) .'">Jogo</a>';
                   ?>
@@ -119,21 +119,21 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout success" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_JogoEmGrupo',FALSE) .'">Jogo em Grupo</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_JogoIndividual',FALSE) .'">Jogo Individual</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Maquina',FALSE) .'">Máquina</a>';
                   ?>
@@ -142,21 +142,21 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Mesa',FALSE) .'">Mesa</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Oferece',FALSE) .'">Oferece</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Partida',FALSE) .'">Partida</a>';
                   ?>
@@ -165,14 +165,14 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
             <div class="row" data-equalizer data-equalize-on="medium">
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout success" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Pessoa',FALSE) .'">Pessoa</a>';
                   ?>
                 </div>
               </div>
               <div class="medium-4 columns">
-                <div class="callout" data-equalizer-watch>
+                <div class="callout warning" data-equalizer-watch>
                   <?php
                   echo '<a href="tabela.php?ntb=' .md5('TB_Vendeu',FALSE) .'">Vendeu</a>';
                   ?>
