@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Tabela Ganhou</h1>
+        <h1 class="page-header">Tabela Oferece</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -11,18 +11,18 @@
           <table class="table table-striped table-bordered table-hover" id="MainTabela">
             <thead>
               <tr>
-                <th>ID da partida</th>
-                <th>DOC do cliente</th>
+                <th>Nome do jogo</th>
+                <th>Serial da máquina</th>
               </tr>
             </thead>
             <tbody>
               <?php
               $pdo = BancodeDados::conecta();
-              $sql = 'SELECT * FROM '. $BDSchema .'TB_Ganhou ORDER BY id_par ASC';
+              $sql = 'SELECT * FROM '. $BDSchema .'TB_Oferece ORDER BY nome_jgi ASC';
               foreach ($pdo->query($sql) as $row) {
                 echo '<tr>';
-                echo '<td>'. $row['id_par'] .'</td>';
-                echo '<td>'. $row['doc_cli'] . '</td>';
+                echo '<td>'. $row['nome_jgi'] . '</td>';
+                echo '<td>'. $row['snumber_maq'] . '</td>';
                 echo '</tr>';
               }
               BancodeDados::desconecta();
