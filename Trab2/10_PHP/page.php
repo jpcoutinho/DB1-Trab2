@@ -38,9 +38,23 @@ require_once("resources/config.php");
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
-                <?php
-                require_once('resources/pages/ver/'. $_GET['ntb'] .'.php');
-                ?>
+              <?php
+              if($_GET['tb']==1){
+                require_once('resources/pages/inserir/'. $_GET['ntb'] .'.php');
+              }
+              elseif ($_GET['tb']==2) {
+                require_once('resources/pages/ler/'. $_GET['ntb'] .'.php');
+              }
+              elseif ($_GET['tb']==3) {
+                require_once('resources/pages/atualizar/'. $_GET['ntb'] .'.php');
+              }
+              elseif ($_GET['tb']==4) {
+                require_once('resources/pages/deletar/'. $_GET['ntb'] .'.php');
+              }
+              else{
+                echo "<h1>OPERAÇÃO NÃO PERMITIDA!!</h1>";
+              }
+              ?>
             </div>
             <!-- /.container-fluid -->
         </div>
@@ -53,17 +67,7 @@ require_once("resources/config.php");
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
     <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
-    <!-- DataTables JavaScript -->
-    <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#MainTabela').DataTable({
-                responsive: true
-        });
-    });
-    </script>
 </body>
 </html>
