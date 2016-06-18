@@ -44,6 +44,10 @@ $pdo = BancodeDados::conecta();
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
+                        <?php
+                        $stmt = $pdo->query("SELECT count(doc_pes) FROM ". $BDSchema ."TB_Cliente");
+                        $totalClientes = $stmt->fetchColumn();
+                        ?>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
@@ -51,12 +55,12 @@ $pdo = BancodeDados::conecta();
                                         <i class="fa fa-star fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">999</div>
+                                        <?php echo '<div class="huge">'.$totalClientes.'</div>'; ?>
                                         <div>Clientes!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="tabela.php?ntb=36b5b40331e8df3f92b5ccf8685afbf5">
                                 <div class="panel-footer">
                                     <span class="pull-left">Ver Detalhes</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -66,6 +70,10 @@ $pdo = BancodeDados::conecta();
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
+                        <?php
+                        $stmt = $pdo->query("SELECT count(doc) FROM ". $BDSchema ."TB_Pessoa");
+                        $totalPessoas = $stmt->fetchColumn();
+                        ?>
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
@@ -73,12 +81,12 @@ $pdo = BancodeDados::conecta();
                                         <i class="fa fa-users fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">1024</div>
+                                        <?php echo '<div class="huge">'.$totalPessoas.'</div>'; ?>
                                         <div>Pessoas!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="tabela.php?ntb=05b7ea9032cccacb4ecfa3785f42810c">
                                 <div class="panel-footer">
                                     <span class="pull-left">Ver Detalhes</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -88,6 +96,10 @@ $pdo = BancodeDados::conecta();
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
+                        <?php
+                        $stmt = $pdo->query("SELECT count(id) FROM ". $BDSchema ."TB_Partida");
+                        $totalPartidas = $stmt->fetchColumn();
+                        ?>
                         <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
@@ -95,12 +107,12 @@ $pdo = BancodeDados::conecta();
                                         <i class="fa fa-flag-o fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">50000</div>
+                                        <?php echo '<div class="huge">'.$totalPartidas.'</div>'; ?>
                                         <div>Partidas!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="tabela.php?ntb=f3df806dc323278b7ceee93ff594327d">
                                 <div class="panel-footer">
                                     <span class="pull-left">Ver Detalhes</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -110,6 +122,10 @@ $pdo = BancodeDados::conecta();
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
+                        <?php
+                        $stmt = $pdo->query("SELECT count(doc_pes) FROM ". $BDSchema ."TB_Funcionario");
+                        $totalFuncionarios = $stmt->fetchColumn();
+                        ?>
                         <div class="panel panel-red">
                             <div class="panel-heading">
                                 <div class="row">
@@ -117,12 +133,12 @@ $pdo = BancodeDados::conecta();
                                         <i class="fa fa-user fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">50</div>
+                                        <?php echo '<div class="huge">'.$totalFuncionarios.'</div>'; ?>
                                         <div>Funcionários!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="tabela.php?ntb=dbe3d143277fe8475c2e3e88ecf021f5">
                                 <div class="panel-footer">
                                     <span class="pull-left">Ver Detalhes</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -142,24 +158,24 @@ $pdo = BancodeDados::conecta();
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
-                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Cliente</button>
+                        <a href="page.php?ntb=36b5b40331e8df3f92b5ccf8685afbf5&tb=1"><button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Cliente</button></a>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Franquia</button>
+                        <a href="page.php?ntb=607eb7714ecba6f640dd0c1fafb2f42c&tb=1"><button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Franquia</button></a>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Funcionário</button>
+                        <a href="page.php?ntb=dbe3d143277fe8475c2e3e88ecf021f5&tb=1"><button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Funcionário</button></a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
-                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Jogo</button>
+                        <a href="page.php?ntb=bceca77ab8c59eeaf2e6d6a323be0ae7&tb=1"><button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Jogo</button></a>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Máquina</button>
+                        <a href="page.php?ntb=eaff6c1f31f280f1bd68c5d54469f61b&tb=1"><button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Máquina</button></a>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Pessoa</button>
+                        <a href="page.php?ntb=05b7ea9032cccacb4ecfa3785f42810c&tb=1"><button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Pessoa</button></a>
                     </div>
                 </div>
             </div>
