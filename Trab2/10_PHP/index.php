@@ -1,193 +1,183 @@
 <?php
-session_start(); /* Starts the session */
-if(!isset($_SESSION['UserData']['Username'])){
-	header("location:login.php");
-	exit;
-}
+require_once("resources/config.php");
+$pdo = BancodeDados::conecta();
 ?>
-<!doctype html>
-<html class="no-js" lang="pt" dir="ltr">
-  <head>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BD1 Item 10</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
-  </head>
-  <body>
-    <?php
-    require_once("resources/template/menu.php");
-    ?>
-        <!-- Coloque conteudo a partir daqui -->
-        <div class="off-canvas-content" data-off-canvas-content>
-          <div class="row column MaxWidth">
-            <div class="row">
-              <h2>Selecione uma tabela</h2>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Casino INF1336</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <?php
+        require_once("resources/template/nav.php");
+        ?>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Dashboard</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-star fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">999</div>
+                                        <div>Clientes!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver Detalhes</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-users fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">1024</div>
+                                        <div>Pessoas!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver Detalhes</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-flag-o fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">50000</div>
+                                        <div>Partidas!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver Detalhes</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-user fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">50</div>
+                                        <div>Funcionários!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver Detalhes</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Adicionar novo</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Cliente</button>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Franquia</button>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Funcionário</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Jogo</button>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Máquina</button>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block MarginTop">Pessoa</button>
+                    </div>
+                </div>
             </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Caixa',FALSE) .'">Caixa</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Cliente',FALSE) .'">Cliente</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Competiu',FALSE) .'">Competiu</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Comprou',FALSE) .'">Comprou</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout success" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_ContatoFranquia',FALSE) .'">Contato Franquia</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout success" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_ContatoPessoa',FALSE) .'">Contato Pessoa</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Franquia',FALSE) .'">Franquia</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout success" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Frequentou',FALSE) .'">Frequentou</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Funcionario',FALSE) .'">Funcionário</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Ganhou',FALSE) .'">Ganhou</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout success" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Jogada',FALSE) .'">Jogada</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Jogo',FALSE) .'">Jogo</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout success" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_JogoEmGrupo',FALSE) .'">Jogo em Grupo</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_JogoIndividual',FALSE) .'">Jogo Individual</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Maquina',FALSE) .'">Máquina</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Mesa',FALSE) .'">Mesa</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Oferece',FALSE) .'">Oferece</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Partida',FALSE) .'">Partida</a>';
-                  ?>
-                </div>
-              </div>
-            </div>
-            <div class="row" data-equalizer data-equalize-on="medium">
-              <div class="medium-4 columns">
-                <div class="callout success" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Pessoa',FALSE) .'">Pessoa</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns">
-                <div class="callout warning" data-equalizer-watch>
-                  <?php
-                  echo '<a href="tabela.php?ntb=' .md5('TB_Vendeu',FALSE) .'">Vendeu</a>';
-                  ?>
-                </div>
-              </div>
-              <div class="medium-4 columns"></div>
-            </div>
-          </div>
+            <!-- /.container-fluid -->
         </div>
-        <!-- Fim do conteudo -->
-      </div>
+        <!-- /#page-wrapper -->
     </div>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+</body>
 </html>
+<?php
+  $pdo = BancodeDados::desconecta();
+?>
