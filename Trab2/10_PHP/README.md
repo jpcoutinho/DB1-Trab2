@@ -1,8 +1,8 @@
 Para acessar a interface use as seguintes credenciais:
 
-Login: Zezinho;
+Login: Zezinho
 
-Senha: 123456;
+Senha: 123456
 
 Servidor de teste:
 
