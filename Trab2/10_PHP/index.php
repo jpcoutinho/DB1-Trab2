@@ -24,7 +24,7 @@ $pdo = BancodeDados::conecta();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Casino INF1336</title>
+    <title>Casino INF1383</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
