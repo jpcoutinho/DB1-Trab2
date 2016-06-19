@@ -17,16 +17,16 @@ $pseu = $row['pseudominio'];
   <div class="col-lg-12">
     <?php
     echo '<a href="tabela.php?ntb='.$_GET['ntb'].'"><button type="button" class="btn btn-primary">Voltar</button></a>';
-    echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=2&a='.$_GET['a'].'"><button type="button" class="btn btn-info">Ir para pessoa</button></a>';
-    echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=3&a='.$_GET['a'].'"><button type="button" class="btn btn-warning">Editar</button></a>';
-    echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeletarEntrada">Deletar</button>';
+    echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=2&a='.$_GET['a'].'"><button type="button" class="btn btn-info MarginLeft">Ir para pessoa</button></a>';
+    echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=3&a='.$_GET['a'].'"><button type="button" class="btn btn-warning MarginLeft">Editar</button></a>';
+    echo '<button type="button" class="btn btn-danger MarginLeft" data-toggle="modal" data-target="#DeletarEntrada">Deletar</button>';
     ?>
   </div>
 </div>
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
-      <dl class="dl-horizontal">
+      <dl class="dl-horizontal MarginTop">
           <?php
           $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Pessoa PES WHERE PES.doc='". $doc_pes ."'");
           $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -59,7 +59,12 @@ $pseu = $row['pseudominio'];
             echo '<dd>Outro</dd>';
           ?>
           <dt>Data de nascimento:</dt>
-          <?php echo '<dd>'.$row['nascimento'].'</dd>'; ?>
+          <?php echo '<dd>'.$row['nascimento'].'</dd>';
+          echo '<dt>Contato:</dt>';
+          $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_ContatoPessoa COP WHERE COP.doc_pes='". $doc ."'");
+          foreach ($stmt as $row)
+            echo '<dd>'.$row['contato'].'</dd>';
+          ?>
       </dl>
     </div>
 </div>
