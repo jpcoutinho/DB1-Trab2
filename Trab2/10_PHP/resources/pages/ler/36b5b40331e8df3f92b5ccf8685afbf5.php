@@ -17,7 +17,7 @@ $pseu = $row['pseudominio'];
   <div class="col-lg-12">
     <?php
     echo '<a href="tabela.php?ntb='.$_GET['ntb'].'"><button type="button" class="btn btn-primary">Voltar</button></a>';
-    echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=2&a='.$_GET['a'].'"><button type="button" class="btn btn-info MarginLeft">Ir para pessoa</button></a>';
+    echo '<a href="page.php?ntb=05b7ea9032cccacb4ecfa3785f42810c&tb=2&a='.$_GET['a'].'"><button type="button" class="btn btn-info MarginLeft">Ir para pessoa</button></a>';
     echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=3&a='.$_GET['a'].'"><button type="button" class="btn btn-warning MarginLeft">Editar</button></a>';
     echo '<button type="button" class="btn btn-danger MarginLeft" data-toggle="modal" data-target="#DeletarEntrada">Deletar</button>';
     ?>
@@ -30,6 +30,7 @@ $pseu = $row['pseudominio'];
           <?php
           $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Pessoa PES WHERE PES.doc='". $doc_pes ."'");
           $row = $stmt->fetch(PDO::FETCH_ASSOC);
+          $NomePes = $row['nome'];
           ?>
           <dt>Documento:</dt>
           <?php echo '<dd>#'.$doc_pes.'</dd>'; ?>
@@ -48,7 +49,7 @@ $pseu = $row['pseudominio'];
             echo '<dd>**NÃO PUSSUI**</dd>';
           ?>
           <dt>Nome:</dt>
-          <?php echo '<dd>'.$row['nome'].'</dd>'; ?>
+          <?php echo '<dd>'.$NomePes.'</dd>'; ?>
           <dt>Sexo:</dt>
           <?php
           if($row['sexo']==='M')
@@ -78,7 +79,7 @@ $pseu = $row['pseudominio'];
                 <h4 class="modal-title" id="myModalLabel">Deletar entrada</h4>
             </div>
             <div class="modal-body">
-                <?php echo 'Tem certeza que deseja deletar o cliente: '.$row['nome'].' com o documento: #'.$doc_pes.'?'; ?>
+                <?php echo 'Tem certeza que deseja deletar o cliente: '.$NomePes.' com o documento: #'.$doc_pes.'?'; ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Não</button>
