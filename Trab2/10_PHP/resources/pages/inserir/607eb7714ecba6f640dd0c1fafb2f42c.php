@@ -10,7 +10,15 @@ if ( !empty($_POST)) {
         $q = $pdo->prepare($sql);
         $q->execute(array($tin,$nome,$endereco));
         BancodeDados::desconecta();
-        header('Location: tabela.php?ntb='. $_GET['ntb'] .'');
+        if (!headers_sent()) {
+            header('Location: '.$url);
+            exit;
+        } else {
+                echo '<script type="text/javascript">';
+                echo 'window.location.href="'.$url.'";';
+                echo '</script>';
+                exit;
+        }
       }
 ?>
 <div class="row">

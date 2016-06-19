@@ -1,4 +1,18 @@
 <?php
+session_start(); /* Starts the session */
+if(!isset($_SESSION['UserData']['Username'])){
+  $url = "login.php";
+  if (!headers_sent()) {
+      header('Location: '.$url);
+      exit;
+  } else {
+          echo '<script type="text/javascript">';
+          echo 'window.location.href="'.$url.'";';
+          echo '</script>';
+          exit;
+  }
+  exit;
+}
 require_once("resources/config.php");
 $pdo = BancodeDados::conecta();
 ?>
