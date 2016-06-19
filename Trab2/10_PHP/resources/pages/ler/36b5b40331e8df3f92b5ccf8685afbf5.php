@@ -1,0 +1,90 @@
+<?php
+$pdo = BancodeDados::conecta();
+$doc = $_GET['a'];
+$stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Cliente CLI WHERE CLI.doc_pes='". $doc ."'");
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$doc_pes = $row['doc_pes'];
+$pseu = $row['pseudominio'];
+?>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Visualizar um Cliente</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+  <div class="col-lg-12">
+    <?php
+    echo '<a href="tabela.php?ntb='.$_GET['ntb'].'"><button type="button" class="btn btn-primary">Voltar</button></a>';
+    echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=2&a='.$_GET['a'].'"><button type="button" class="btn btn-info">Ir para pessoa</button></a>';
+    echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=3&a='.$_GET['a'].'"><button type="button" class="btn btn-warning">Editar</button></a>';
+    echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeletarEntrada">Deletar</button>';
+    ?>
+  </div>
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+      <dl class="dl-horizontal">
+          <?php
+          $stmt = $pdo->query("SELECT * FROM ". $BDSchema ."TB_Pessoa PES WHERE PES.doc='". $doc_pes ."'");
+          $row = $stmt->fetch(PDO::FETCH_ASSOC);
+          ?>
+          <dt>Documento:</dt>
+          <?php echo '<dd>#'.$doc_pes.'</dd>'; ?>
+          <dt>Tipo do documento:</dt>
+          <?php
+          if($row['tipodoc']==='PP')
+            echo '<dd>Passaporte</dd>';
+          else
+            echo '<dd>Idêntidade</dd>';
+          ?>
+          <dt>Pseudônimo:</dt>
+          <?php
+          if(!empty($pseu))
+            echo '<dd>'.$pseu.'</dd>';
+          else
+            echo '<dd>**NÃO PUSSUI**</dd>';
+          ?>
+          <dt>Nome:</dt>
+          <?php echo '<dd>'.$row['nome'].'</dd>'; ?>
+          <dt>Sexo:</dt>
+          <?php
+          if($row['sexo']==='M')
+            echo '<dd>Masculino</dd>';
+          elseif ($row['sexo']==='F')
+            echo '<dd>Fêminino</dd>';
+          else
+            echo '<dd>Outro</dd>';
+          ?>
+          <dt>Data de nascimento:</dt>
+          <?php echo '<dd>'.$row['nascimento'].'</dd>'; ?>
+      </dl>
+    </div>
+</div>
+<!-- /.row -->
+<!-- Modal -->
+<div class="modal fade" id="DeletarEntrada" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Deletar entrada</h4>
+            </div>
+            <div class="modal-body">
+                <?php echo 'Tem certeza que deseja deletar o cliente: '.$row['nome'].' com o documento: #'.$doc_pes.'?'; ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Não</button>
+                <?php echo '<a href="page.php?ntb='.$_GET['ntb'].'&tb=4&a='.$_GET['a'].'"><button type="button" class="btn btn-danger">Deletar</button></a>'; ?>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<?php
+BancodeDados::desconecta();
+?>
