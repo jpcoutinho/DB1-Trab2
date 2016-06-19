@@ -37,8 +37,8 @@ require_once("resources/config.php");
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="dist/js/html5shiv.js"></script>
-        <script src="dist/js/respond.min.js"></script>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -60,16 +60,16 @@ require_once("resources/config.php");
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="js/metisMenu.min.js"></script>
     <!-- DataTables JavaScript -->
-    <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.min.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="dist/js/sb-admin-2.js"></script>
+    <script src="js/sb-admin-2.js"></script>
     <script>
     $(document).ready(function() {
         $('#MainTabela').DataTable({

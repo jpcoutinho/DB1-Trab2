@@ -4,7 +4,7 @@
   class BancodeDados{
     private static $bdEnd = '127.0.0.1'; // Host
     private static $bdUsr = 'postgres'; // Usuário
-    private static $bdUsrPsw = '12345'; // Senha
+    private static $bdUsrPsw = '7SmQMyvErP7P4Gk7'; // Senha
     private static $bdNome = 'bd1a3wb161018'; // Nome do banco de dados
 
     private static $coneccao = NULL;

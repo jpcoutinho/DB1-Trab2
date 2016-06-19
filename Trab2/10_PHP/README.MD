@@ -10,3 +10,6 @@ https://bitnami.com/stack/wapp
 
 MAPP:
 https://bitnami.com/stack/mapp
+
+Servidor de teste:
+http://104.236.27.233/
