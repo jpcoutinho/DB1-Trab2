@@ -17,3 +17,5 @@ Depois modifique o arquivo config.php que se localiza no seguinte local:
 `Trab2\10_PHP\resources\config.php`
 
 E mude com as informações do seu servidor.
+
+E seja feliz! :thumbsup::relaxed::relaxed::relaxed::thumbsup:
