@@ -2,9 +2,9 @@
     $BDSchema = 'trab2teste.';
     $Moeda = 'US$ ';
   class BancodeDados{
-    private static $bdEnd = 'localhost'; // Host
-    private static $bdUsr = 'phpuser'; // Usuário
-    private static $bdUsrPsw = '123456'; // Senha
+    private static $bdEnd = '127.0.0.1'; // Host
+    private static $bdUsr = 'postgres'; // Usuário
+    private static $bdUsrPsw = '12345'; // Senha
     private static $bdNome = 'bd1a3wb161018'; // Nome do banco de dados
 
     private static $coneccao = NULL;
