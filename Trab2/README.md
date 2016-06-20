@@ -1,35 +1,13 @@
-# To-Do
+Grupo D:
 
-### 7 Modelagem Física
-#### 7.1 Tabelas
-- [x] Criação de tabelas
-- [x] Add FOREIGN KEY's
-- [x] Restrições de integridade
+Theo Mendes, Rafael França, João Pedro Coutinho
 
-#### 7.2 Índices
-- [x] Definação
-- [x] Criação
+Banco de dados oficial: bd1a3wb161018
 
-#### 7.3 Gatilhos e Funções
-- [x] Primeira função
-- [x] Segunda função
+URL para a aplicação PHP: http://139.82.100.146/bd1a3wb161018/
 
-### 8 Carga e verificação
-#### 8.1 Carga de Dados
-- [x] INSERT's para carga de dados
+Dados para acessar a aplicação
 
-#### 8.2 Verificação
-- [x] INSERT's
-- [x] UPDATE's
-- [x] DELETE's
+Usuário: Zezinho
 
-### 9 Consultas
-#### 9.1 Consultas Iniciais
-- [ ] O.K?
-
-#### 9.2 Consultas Adicionais
-- [x] O.K?
-
-### 10 Aplicação PHP
-- [x] CRUD
-- [x] Consultas
+Senha: 123456
