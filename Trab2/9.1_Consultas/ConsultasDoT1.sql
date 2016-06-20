@@ -1,4 +1,6 @@
-CONSULTA 1
+--CONSULTA 1
+
+SET SCHEMA 'trab2teste';
 
 SELECT DISTINCT PES.nome, PES.sexo
 FROM TB_Pessoa PES
@@ -22,7 +24,9 @@ FROM TB_Pessoa PES, TB_Jogo JGO, TB_JogoEmGrupo JGG, TB_Mesa MES, TB_Partida PAR
 	AND PAR.id = CPU.id_PAR
 )
 
-CONSULTA 2
+-- CONSULTA 2
+
+SET SCHEMA 'trab2teste';
 
 SELECT CLI1.pseudominio, CLI2.pseudominio
 FROM TB_Cliente CLI1
@@ -37,7 +41,9 @@ AND PES2.nascimento = < 25
 ORDER BY CLI1.pseudominio
 
 
-CONSULTA 3
+-- CONSULTA 3
+
+SET SCHEMA 'trab2teste';
 
 SELECT PES.nome, COP.contato
 FROM TB_Pessoa PES, TB_Cliente CLI, TB_ContatoPessoa COP, TB_Jogada JOG
@@ -61,7 +67,9 @@ AND COP.doc_PES = PES.doc
 
 
 
-CONSULTA 4
+-- CONSULTA 4
+
+SET SCHEMA 'trab2teste';
 
 SELECT PES.nome
 FROM TB_Pessoa PES
@@ -80,25 +88,28 @@ FROM TB_Pessoa PES
 	JOIN TB_Competiu CPU
 	ON CLI.doc_PES = CPU.doc_CLI
 	AND CPU.ganhou > CPU.apostou
-	AND CPU.ganhou > 10000
+	AND CPU.ganhou > 10000
 
 
-CONSULTA 5 //corrigir a idade
+
+-- CONSULTA 5
+
+SET SCHEMA 'trab2teste';
 
 SELECT CLI.pseudominio, PES.nascimento
 FROM TB_Cliente CLI, TB_Pessoa PES
 WHERE NOT EXISTS (
- SELECT *
- FROM TB_Jogo JGO, TB_JogoIndividual JGI
- WHERE ((JGO.duracao < 001.00) AND (JGO.nome = JGI.nome_JGO))
- AND NOT EXISTS (
- SELECT *
- FROM TB_Pessoa PES, TB_Cliente CLI, TB_Jogada JOG
- WHERE PES.idade < 28
- AND PES.doc = CLI.doc_PES
- AND JOG.doc_CLI = CLI.doc_PES
- )
-)
+	SELECT *
+	FROM TB_Jogo JGO, TB_JogoIndividual JGI
+	WHERE ((JGO.duracao < 1) AND (JGO.nome = JGI.nome_JGO))
+	AND NOT EXISTS (
+		SELECT *
+		FROM TB_Pessoa PES, TB_Cliente CLI, TB_Jogada JOG
+		WHERE date_part('year',age(PES.nascimento)) < 28
+		AND PES.doc = CLI.doc_PES
+		AND JOG.doc_CLI = CLI.doc_PES
+ 	)
+);
 
 
 
