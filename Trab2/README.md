@@ -1,18 +1,23 @@
 Grupo D:
 
-Theo Mendes, Rafael França, João Pedro Coutinho
+| Nome                | Matricula       |
+| :-------------      | :-------------  |
+| Theo Mendes         | 1421518         |
+| Rafael França       | 1421436         |
+| João Pedro Coutinho | 1421768         |
 
-Banco de dados oficial: bd1a3wb161018
+Banco de dados oficial: `bd1a3wb161018`
 
 
-Observações:
+### Observações:
 O trabalho está dividido em pastas de acordo com os topicos do enunciado.
 Para rapida criação do banco de dados, um arquivo chamado MONOLITO.SQL foi adicionado a raiz.
 Esse arquivo contem todo DDL e DML.
 
 
-PHP:
-URL para a aplicação PHP: http://139.82.100.146/bd1a3wb161018/
-Dados para acessar a aplicação
-Usuário: Zezinho
-Senha: 123456
+### Aplicação PHP:
+**URL para a aplicação PHP:** http://139.82.100.146/bd1a3wb161018/
+#### Dados para acessar a aplicação
+| Usuário       | Senha          |
+| :-------------| :------------- |
+| Zezinho       | 123456         |
