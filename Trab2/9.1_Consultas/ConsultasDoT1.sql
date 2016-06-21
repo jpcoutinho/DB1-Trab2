@@ -26,20 +26,22 @@ FROM TB_Pessoa PES, TB_Jogo JGO, TB_JogoEmGrupo JGG, TB_Mesa MES, TB_Partida PAR
 
 -- CONSULTA 2
 
-SET SCHEMA 'trab2teste';
-
 SELECT CLI1.pseudominio, CLI2.pseudominio
-FROM TB_Cliente CLI1
-	JOIN TB_Pessoa PES1
-	ON CLI1.doc_PES = PES1.doc
-CROSS JOIN (TB_Cliente CLI2
-        JOIN TB_Pessoa PES2
-        ON CLI2.doc_PES = PES2.doc)
-WHERE PES1.sexo = 'F'
-AND PES1.nascimento > 45
-AND PES2.nascimento = < 25
-ORDER BY CLI1.pseudominio
+FROM TB_Cliente CLI1, TB_Cliente CLI2
+WHERE CLI1.doc_PES IN 
+(
+  SELECT doc
+  FROM TB_Pessoa PES1
+  WHERE PES1.sexo = 'F'
+  AND date_part('year',age(PES1.nascimento)) > 45
+)
 
+AND CLI2.doc_PES IN 
+(
+  SELECT doc
+  FROM TB_Pessoa PES2
+  WHERE date_part('year',age(PES2.nascimento)) < 25
+)
 
 -- CONSULTA 3
 
@@ -96,26 +98,14 @@ FROM TB_Pessoa PES
 
 SET SCHEMA 'trab2teste';
 
-SELECT CLI.pseudominio, PES.nascimento
-FROM TB_Cliente CLI, TB_Pessoa PES
-WHERE NOT EXISTS (
-	SELECT *
-	FROM TB_Jogo JGO, TB_JogoIndividual JGI
-	WHERE ((JGO.duracao < 1) AND (JGO.nome = JGI.nome_JGO))
-	AND NOT EXISTS (
-		SELECT *
-		FROM TB_Pessoa PES, TB_Cliente CLI, TB_Jogada JOG
-		WHERE date_part('year',age(PES.nascimento)) < 28
-		AND PES.doc = CLI.doc_PES
-		AND JOG.doc_CLI = CLI.doc_PES
- 	)
-);
-
-
-
-
-
-
+SELECT DISTINCT CLI.pseudominio, PES.nascimento
+FROM TB_Cliente CLI, TB_Pessoa PES, TB_Jogo JGO, TB_JogoIndividual JGI, TB_Jogada JOG
+  WHERE PES.doc = CLI.doc_PES
+  AND JOG.doc_CLI = CLI.doc_PES
+  AND JOG.nome_JGI = JGI.nome_JGO
+  AND JGI.nome_JGO = JGO.nome
+  GROUP BY CLI.pseudominio 
+  HAVING COUNT(JOG.nome_JGI) = (SELECT COUNT(JGO.duracao) FROM TB_Jogo JGO WHERE JGO.duracao < 1);
 
 
 
