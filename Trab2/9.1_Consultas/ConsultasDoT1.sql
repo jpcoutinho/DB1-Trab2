@@ -103,10 +103,10 @@ SELECT DISTINCT CLI.pseudominio, PES.nascimento
 FROM TB_Cliente CLI, TB_Pessoa PES, TB_Jogo JGO, TB_JogoIndividual JGI, TB_Jogada JOG
   WHERE PES.doc = CLI.doc_PES
   AND JOG.doc_CLI = CLI.doc_PES
-  AND JOG.nome_JGI = JGI.nome_JGO
+  AND JOG.nome_JGO = JGI.nome_JGO
   AND JGI.nome_JGO = JGO.nome
-  GROUP BY CLI.pseudominio 
-  HAVING COUNT(JOG.nome_JGI) = (SELECT COUNT(JGO.duracao) FROM TB_Jogo JGO WHERE JGO.duracao < 1);
+  GROUP BY CLI.pseudominio, PES.nascimento
+  HAVING COUNT(JOG.nome_JGO) = (SELECT COUNT(JGO.duracao) FROM TB_Jogo JGO WHERE JGO.duracao < 1);
 
 
 
