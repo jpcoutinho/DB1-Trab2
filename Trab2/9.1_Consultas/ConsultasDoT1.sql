@@ -1,5 +1,5 @@
 --CONSULTA 1
-
+forma 1:
 SET SCHEMA 'trab2teste';
 
 SELECT DISTINCT PES.nome, PES.sexo
@@ -13,6 +13,7 @@ EXCEPT
 	AND PAR.id = CPU.id_PAR
 	AND CPU.doc_CLI = PES.doc
 
+forma 2:
 SELECT DISTINCT PES.nome, PES.sexo
 FROM TB_Pessoa PES
 WHERE PES.doc NOT IN (
