@@ -1,7 +1,6 @@
 # Trabalho, Parte 1
 > Grau G1: entrega definitiva até 25/04/16 às 23h59
 
-
 ### 1. INTRODUÇÃO
 > Descrição textual do contexto do projeto e sua motivação/relevância
 
@@ -22,7 +21,6 @@
 
 #### 3.3 Regras de Negócio
 > Restrições de integridade semântica; descrever pelo menos duas
-
 
 ### 4. MODELAGEM LÓGICA RELACIONAL
 #### 4.1 Critérios para mapeamento da Modelagem Conceitual para o Modelo Relacional
