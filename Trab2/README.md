@@ -17,4 +17,4 @@ Esse arquivo contem todo **DDL** e **DML**.
 #### Dados para acessar a aplicação
 | Usuário       | Senha          |
 | :-------------| :------------- |
-| Zezinho       | 123456         |
+| #######       | ######         |
